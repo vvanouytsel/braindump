@@ -20,5 +20,11 @@ Quartz v4 features a from-the-ground rewrite focusing on end-user extensibility 
 ## Syncing your content
 
 ```bash
-npx quartz sync
+npx quartz sync --directory=Braindump
+```
+
+## Build and preview
+
+```bash
+npx quartz build --directory=Braindump --serve
 ```

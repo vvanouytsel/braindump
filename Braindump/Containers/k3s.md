@@ -56,7 +56,7 @@ $ systemctl restart k3s
 - Verify that `kubectl` works again and that pods are active
 
 ```bash
-$ kubectl get pods -n trendminer
+$ kubectl get pods -n company
 ```
 
 - Restore the date

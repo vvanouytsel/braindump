@@ -3,7 +3,7 @@
 Use SSH tunneling to port forward `8080` on your local host to port `9090` of your target host
 
 ```bash
-ssh -L localhost:8080:127.0.0.1:9090 tm-my-example-server
+ssh -L localhost:8080:127.0.0.1:9090 my-my-example-server
 ```
 
 For example

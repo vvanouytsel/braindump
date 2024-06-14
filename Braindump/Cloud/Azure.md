@@ -45,7 +45,7 @@ az vm create \
       --location westeurope \
       --assign-identity \
       --scope /subscriptions/ec48b4cb-76f9-487b-8fea-35a53a7618be/resourceGroups/rg-poc-pipeline-devops-azure/providers/Microsoft.ContainerRegistry/registries/crpocpipelinedevopsazure \
-      --name tm-poc-azure-agent \
+      --name my-poc-azure-agent \
       --image images \
       --ssh-key-value ~/.ssh/id_rsa.pub \
       --public-ip-address "" \
@@ -57,7 +57,7 @@ az vm create \
 Delete a virtual machine
 
 ```bash
-az vm delete --resource-group rg-poc-pipeline-devops-azure --name tm-poc-azure-agent
+az vm delete --resource-group rg-poc-pipeline-devops-azure --name my-poc-azure-agent
 ```
 
 ### Identity
@@ -65,13 +65,13 @@ az vm delete --resource-group rg-poc-pipeline-devops-azure --name tm-poc-azure-a
 Create an identity for a VM
 
 ```bash
-az vm identity assign --resource-group rg-poc-pipeline-devops-azure --name tm-poc-azure-agent
+az vm identity assign --resource-group rg-poc-pipeline-devops-azure --name my-poc-azure-agent
 ```
 
 Get the principalId of the identity
 
 ```bash
-spID=$(az vm show --resource-group rg-poc-pipeline-devops-azure --name tm-poc-azure-agent --query identity.principalId --out tsv)
+spID=$(az vm show --resource-group rg-poc-pipeline-devops-azure --name my-poc-azure-agent --query identity.principalId --out tsv)
 ```
 
 Get the id of the resource you want to provide access to
@@ -103,7 +103,7 @@ az acr login --name crpocpipelinedevopsazure
 Show logs of a specific webapp
 
 ```bash
-az webapp log tail --name tm-admin-guide-staging --resource-group rg-pipeline
+az webapp log tail --name my-admin-guide-staging --resource-group rg-pipeline
 ```
 
 ## Registry
@@ -129,7 +129,7 @@ az acr repository list --name crpocpipelinedevopsazure
 Show tags of an image in a container registry
 
 ```bash
-az acr repository show-tags --name crinfradocker --repository tm-admin-guide
+az acr repository show-tags --name crinfradocker --repository my-admin-guide
 
 Result
 -----------
@@ -144,7 +144,7 @@ Result
 Delete tag of a image in a repository in a container registry
 
 ```bash
-az acr repository delete --name crinfradocker --yes --image tm-admin-guide:20191008.5
+az acr repository delete --name crinfradocker --yes --image my-admin-guide:20191008.5
 ```
 
 ### Helm Registry
@@ -271,14 +271,14 @@ Search, download and unpack a helm chart
 
 ```bash
 # Search for the helm chart
-helm search repo tm-test-flow
+helm search repo my-test-flow
 
 NAME                                  CHART VERSION APP VERSION DESCRIPTION
-crpocpipelinedevopsazure/tm-test-flow 0.1.1         1.16.0      A Helm chart for Kubernetes
+crpocpipelinedevopsazure/my-test-flow 0.1.1         1.16.0      A Helm chart for Kubernetes
 
 # Download the helm chart
-helm fetch crpocpipelinedevopsazure/tm-test-flow
+helm fetch crpocpipelinedevopsazure/my-test-flow
 
 # Unpack the helm chart
-tar -xvzf tm-test-flow-*.tgz
+tar -xvzf my-test-flow-*.tgz
 ```

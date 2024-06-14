@@ -10,7 +10,7 @@ $ kubectl run --generator=run-pod/v1 example --image=ubuntu  --dry-run=client  -
 - Run a debug container in a pod
 
 ```bash
-$ kubectl debug -it tm-test-data-connector-747964d7c5-6nrck -n trendminer --image ubuntu
+$ kubectl debug -it my-test-data-connector-747964d7c5-6nrck -n trendminer --image ubuntu
 ```
 
 - Query the api server from within a Pod
@@ -23,8 +23,8 @@ curl https://kubernetes.default.svc/openapi/v2 --cacert /run/secrets/kubernetes.
 - Use custom columns to get the name of the pods
 
 ````bash
-$ kubectl get pods -l app=tm-config-hub -o custom-columns=":metadata.name" --no-headers
-tm-config-hub-5b85796fb7-qprs2
+$ kubectl get pods -l app=my-config-hub -o custom-columns=":metadata.name" --no-headers
+my-config-hub-5b85796fb7-qprs2
 
 * Spin up debug container
 ```sh
@@ -36,7 +36,7 @@ kubectl run -it --rm --image=ubuntu -- bash
 ```sh
 # If you specify a limit for your memory, you can see this being reflected via cgroups in the container.
 # In this case the limit was set to '4861Mi' which correspondents with '5097127936' bytes
-$ kubectl exec -n trendminer tm-zeppelin-648745f8c-vft6s -ti /bin/sh
+$ kubectl exec -n trendminer my-zeppelin-648745f8c-vft6s -ti /bin/sh
 
 # cgroups v2
 $ cat /sys/fs/cgroup/memory/memory.limit_in_bytes
@@ -95,8 +95,8 @@ CURRENT   NAME                   CLUSTER                AUTHINFO                
 You can directly query the metrics of a kubelet using the following endpoints. This can come in handy if you for instance want to know the current imageFs used.
 
 ```bash
-$ kubectl get --raw "/api/v1/nodes/tm-test-turing31/proxy/stats/summary"
-$ kubectl get --raw "/api/v1/nodes/tm-test-turing31/proxy/metrics/resource"
+$ kubectl get --raw "/api/v1/nodes/my-test-turing31/proxy/stats/summary"
+$ kubectl get --raw "/api/v1/nodes/my-test-turing31/proxy/metrics/resource"
 ```
 
 ## Use Custom Columns via Kubectl
@@ -104,14 +104,14 @@ $ kubectl get --raw "/api/v1/nodes/tm-test-turing31/proxy/metrics/resource"
 ```bash
 $ kubectl get pods -A -o custom-columns=":metadata.name,:metadata.namespace,:spec.containers[0].image"
 
-tm-postgres-configuration-qgcgst-2j5xd           trendminer      docker.trendminer.net:5000/tm-postgres-configuration:1.0.2203211626
-tm-assets-6fb5c89b88-8f9qm                       trendminer      docker.trendminer.net:5000/tm-assets:2.8.4
-tm-keycloak-674dd87744-4k5vg                     trendminer      docker.trendminer.net:5000/tm-keycloak:1.0.2203181320-3671586
-tm-compute-6d89c67689-2x6wj                      trendminer      docker.trendminer.net:5000/tm-compute:1.2.2203221403-426c403
+my-postgres-configuration-qgcgst-2j5xd           trendminer      docker.trendminer.net:5000/my-postgres-configuration:1.0.2203211626
+my-assets-6fb5c89b88-8f9qm                       trendminer      docker.trendminer.net:5000/my-assets:2.8.4
+my-keycloak-674dd87744-4k5vg                     trendminer      docker.trendminer.net:5000/my-keycloak:1.0.2203181320-3671586
+my-compute-6d89c67689-2x6wj                      trendminer      docker.trendminer.net:5000/my-compute:1.2.2203221403-426c403
 ingress-nginx-controller-6965799df6-tfj7d        ingress-nginx   k8s.gcr.io/ingress-nginx/controller:v1.1.1
-tm-config-hub-7b89bb449b-88r69                   trendminer      docker.trendminer.net:5000/tm-config-hub:1.0.2203211437-f9c6c68
-tm-hps-8655f6c9c4-p79w2                          trendminer      docker.trendminer.net:5000/tm-hps:2.3.2203211840-10f1366
-tm-datasource-587974797c-vvt24                   trendminer      docker.trendminer.net:5000/tm-datasource:1.0.2203231409-d1b1a9a
+my-config-hub-7b89bb449b-88r69                   trendminer      docker.trendminer.net:5000/my-config-hub:1.0.2203211437-f9c6c68
+my-hps-8655f6c9c4-p79w2                          trendminer      docker.trendminer.net:5000/my-hps:2.3.2203211840-10f1366
+my-datasource-587974797c-vvt24                   trendminer      docker.trendminer.net:5000/my-datasource:1.0.2203231409-d1b1a9a
 coredns-5789895cd-2cnmf                          kube-system     rancher/mirrored-coredns-coredns:1.8.6
 ```
 

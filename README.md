@@ -26,5 +26,5 @@ npx quartz sync --directory=Braindump
 ## Build and preview
 
 ```bash
-npx quartz build --directory=Braindump --serve
+npx quartz build --directory=Braindump --serve 
 ```

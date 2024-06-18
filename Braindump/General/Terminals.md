@@ -50,3 +50,8 @@ alias s="kitten ssh"
 Warp is a modern, Rust-based terminal with AI built in so you and your team can build great software, faster.
 
 [Warp: Your terminal, reimagined](https://www.warp.dev)
+
+## Zelij
+
+[Zelij](https://zellij.dev/)is a terminal workspace with batteries included.
+

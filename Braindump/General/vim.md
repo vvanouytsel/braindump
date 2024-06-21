@@ -1,5 +1,26 @@
 #terminal #linux 
 
+So you want to be a hipster, I mean be efficient and learn vim keybindings?
+As with everything, the beginning will be hard, but all it takes is practice and muscle memory.
+
+### Getting help
+
+You can't learn this by simply reading. Make sure to practice often and use the available manuals and tutorials, they are actually quite good.
+
+Use `vimtutor` as an excellent beginner tutorial.
+```
+vimtutor
+```
+
+Read up on a specific topic.
+```
+# Seriously, you can get help about everything
+:help word
+:help WORD
+:help d
+:help $
+```
+
 ## Normal mode
 
 ### Navigation
@@ -58,6 +79,7 @@
 | Copy full line                        | yy                                                                                         |
 | Paste full line                       | p                                                                                          |
 | Undo                                  | u                                                                                          |
+| Undo all changes on a line            | U                                                                                          |
 | Redo                                  | ctrl + r                                                                                   |
 | Dele full line                        | dd                                                                                         |
 | Delete a word                         | d + i  + w                                                                                 |
@@ -83,6 +105,8 @@
 | Make line uppercase                   | g + U + U                                                                                  |
 | Increment a number                    | ctrl + a                                                                                   |
 | Decrement a number                    | ctrl + x                                                                                   |
+| Replace character on current position | r + character<br>r + x replaces the current character with `x`                             |
+|                                       |                                                                                            |
 
 ### Folding
 
@@ -107,15 +131,16 @@
 
 ### Switching modes
 
-| **Description**                       | **Key** |
-| ------------------------------------- | ------- |
-| Insert mode before cursor             | i       |
-| Insert mode after cursor              | a       |
-| Insert mode at beginning of line      | I       |
-| Insert mode at end of line            | A       |
-| Insert mode after current line        | o       |
-| Insert mode before current line       | O       |
-| Change word and switch to insert mode | c       |
+| **Description**                           | **Key** |
+| ----------------------------------------- | ------- |
+| Insert mode before cursor                 | i       |
+| Insert mode after cursor                  | a       |
+| Insert mode at beginning of line          | I       |
+| Insert mode at end of line                | A       |
+| Insert mode after current line            | o       |
+| Insert mode before current line           | O       |
+| Change word and switch to insert mode     | c + w   |
+| Change full line and sitch to insert mode | c + c   |
 
 
 ## Insert mode
@@ -131,9 +156,27 @@
 | Sort reversed order                        | :sort!                                                                                           |
 | Load external file to cursor position      | :read filename<br>:read /tmp/x.txt reads the file and places the contents at cursor position     |
 | Load output from STDOUT to cursor position | :read !command<br>`:read !ls -ltr` parses the output of `ls -ltr` to the current cursor position |
-|                                            |                                                                                                  |
-|                                            |                                                                                                  |
+| Substitute on line                         | :s/old/new/g                                                                                     |
+| Subtitute on file                          | :%s/old/new/g                                                                                    |
+| Substitute between line numbers            | :#,#s/old/new/g<br>`:10,20s/hi/hello/g` substitutes `hi` to `hello` between line `10` and `20`   |
+| Run commands                               | :!command<br>`:!ls -ltr` runs the `ls -ltr` command<br>                                          |
+| Write to specific file                     | :w FILENAME<br>`:w /tmp/test.txt`                                                                |
 
+## Registers
+
+Vim uses a set of registers. You can use these register using the `"` key.
+
+> [!info]
+> If you do not have a system (`+`) register, make sure to install `vim-gtk3`.
+> ```
+> apt install vim-gtk3
+> ```
+
+
+| Description             | Key                                                                                                                                                 |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| List all register       | :reg                                                                                                                                                |
+| Use a specific register | " + register + operation<br>`"+y`  yanks the current line to the `+` register, which is the clipboard<br>`"3p` pastes the text stored in register 3 |
 
 ## References
 

@@ -4,33 +4,34 @@
 
 ### Navigation
 
-| **Description**                           | **Key**                                                     |
-| ----------------------------------------- | ----------------------------------------------------------- |
-| Move left                                 | h                                                           |
-| Move right                                | l                                                           |
-| Move up                                   | k                                                           |
-| Move down                                 | j                                                           |
-| Move word forward                         | w                                                           |
-| Move word backward                        | b                                                           |
-| Move word end                             | e                                                           |
-| Move WORD forward                         | W                                                           |
-| Move WORD backward                        | B                                                           |
-| Move to end of WORD                       | E                                                           |
-| Move to end of line                       | $                                                           |
-| Move to beginning of line                 | 0                                                           |
-| Move to first non empty character of line | ^                                                           |
-| Move to specific character on line        | f + character <br>`f.` jump to the next dot on the line     |
-| Move to previous character on line        | F + character<br>`F.` jumps to the previous dot on the line |
-| Move sentence up                          | (                                                           |
-| Move sentence down                        | )                                                           |
-| Move paragraph up                         | {                                                           |
-| Move paragraph down                       | }                                                           |
-| Move half page up                         | ctrl + u                                                    |
-| Move half page down                       | ctrl + d                                                    |
-| Move full page up                         | ctrl + u                                                    |
-| Move full page down                       | ctrl + b                                                    |
-| Move to start of page                     | gg                                                          |
-| Move to end of page                       | G                                                           |
+| **Description**                                           | **Key**                                                     |
+| --------------------------------------------------------- | ----------------------------------------------------------- |
+| Move left                                                 | h                                                           |
+| Move right                                                | l                                                           |
+| Move up                                                   | k                                                           |
+| Move down                                                 | j                                                           |
+| Move word forward                                         | w                                                           |
+| Move word backward                                        | b                                                           |
+| Move word end                                             | e                                                           |
+| Move WORD forward                                         | W                                                           |
+| Move WORD backward                                        | B                                                           |
+| Move to end of WORD                                       | E                                                           |
+| Move to end of line                                       | $                                                           |
+| Move to beginning of line                                 | 0                                                           |
+| Move to first non empty character of line                 | ^                                                           |
+| Move to specific character on line                        | f + character <br>`f.` jump to the next dot on the line     |
+| Move to previous character on line                        | F + character<br>`F.` jumps to the previous dot on the line |
+| Move sentence up                                          | (                                                           |
+| Move sentence down                                        | )                                                           |
+| Move paragraph up                                         | {                                                           |
+| Move paragraph down                                       | }                                                           |
+| Move half page up                                         | ctrl + u                                                    |
+| Move half page down                                       | ctrl + d                                                    |
+| Move full page up                                         | ctrl + u                                                    |
+| Move full page down                                       | ctrl + b                                                    |
+| Move to start of page                                     | gg                                                          |
+| Move to end of page                                       | G                                                           |
+| Move to next curly braces, square brackets or parenthesis | %                                                           |
 
 > [!info]
 > Keys can be prefixed with an number. For example `20 k` moves you up 20 times.
@@ -75,6 +76,34 @@
 | Move to markpoint                     | \` + char<br>\`a moves to markpoint `a`                                                    |
 | Move to previous location             | \` + \`                                                                                    |
 | Move to last edited location          | \` + .                                                                                     |
+| Join next 3 lines together            | 3 + J                                                                                      |
+| Make word uppercase                   | g + U + w                                                                                  |
+| Make world lowercase                  | g + u + w                                                                                  |
+| Make line lowercase                   | g + u + u                                                                                  |
+| Make line uppercase                   | g + U + U                                                                                  |
+| Increment a number                    | ctrl + a                                                                                   |
+| Decrement a number                    | ctrl + x                                                                                   |
+
+### Folding
+
+| Description                  | Key   |
+| ---------------------------- | ----- |
+| Fold all code blocks         | z + M |
+| Unfold all code blocks       | z + R |
+| Fold individual code block   | z + c |
+| Unfold individual code block | z + o |
+|                              |       |
+
+### Advanced
+
+
+| Description                    | Key                                                                               |
+| ------------------------------ | --------------------------------------------------------------------------------- |
+| Start recording                | q + character<br>q + a stored recording as a                                      |
+| Stop recording                 | q                                                                                 |
+| Apply recording                | @ + character<br>@ + a applies recording a<br>15 + @ + a applies macro a 15 times |
+| Enable relative line numbering | :set relativenumber                                                               |
+
 
 ### Switching modes
 
@@ -94,6 +123,16 @@
 ## Visual mode
 
 ## Command mode
+
+| Description                                | Key                                                                                              |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| Sort and keep unique entries               | :sort u                                                                                          |
+| Sort                                       | :sort                                                                                            |
+| Sort reversed order                        | :sort!                                                                                           |
+| Load external file to cursor position      | :read filename<br>:read /tmp/x.txt reads the file and places the contents at cursor position     |
+| Load output from STDOUT to cursor position | :read !command<br>`:read !ls -ltr` parses the output of `ls -ltr` to the current cursor position |
+|                                            |                                                                                                  |
+|                                            |                                                                                                  |
 
 
 ## References

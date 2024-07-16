@@ -50,4 +50,10 @@ $ ps -p 13646
 ```
 
 - In this case you can see the the file is altered using `bash`
+- Alternatively you can search all existing monitors
+
+```bash
+$ /sbin/ausearch --format text
+```
+
 - [Reference](https://serverfault.com/questions/320716/find-out-which-process-is-changing-a-file "https://serverfault.com/questions/320716/find-out-which-process-is-changing-a-file")

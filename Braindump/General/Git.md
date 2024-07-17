@@ -22,3 +22,15 @@ Use a specific SSH key when cloning.
 ```bash
 GIT_SSH_COMMAND="ssh -i ~/.ssh/id_ed25519_company_github.pub" git clone git@github.com:Company/example.git
 ```
+
+Specify your email address at a global level.
+
+```bash
+git config user.email "your_email@example.com"
+```
+
+Specify your email address per repository.
+
+```bash
+git config user.email "your_email@example.com"
+```

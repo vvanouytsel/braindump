@@ -34,3 +34,9 @@ Specify your email address per repository.
 ```bash
 git config user.email "your_email@example.com"
 ```
+
+Use a template for you commit messages.
+
+```bash
+git config --global commit.template ~/.gitmessage 
+```

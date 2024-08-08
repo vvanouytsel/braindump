@@ -7,6 +7,7 @@
 - [zsh-autocomplete](https://github.com/marlonrichert/zsh-autocomplete "https://github.com/marlonrichert/zsh-autocomplete"): autocomplete
 - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting "https://github.com/zsh-users/zsh-syntax-highlighting"): syntax highlighting
 - [awesome-zsh-plugins](https://github.com/unixorn/awesome-zsh-plugins "https://github.com/unixorn/awesome-zsh-plugins"): list of awesome plugins
+- [fzf-tab-completion](https://github.com/lincheney/fzf-tab-completion): fuzzy find with tab completion
 - [kazam](https://github.com/henrywoo/kazam "https://github.com/henrywoo/kazam"): screen recording
 
 ## Pbcopy and Pbpaste

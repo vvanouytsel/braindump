@@ -10,6 +10,7 @@
 - [fzf-tab-completion](https://github.com/lincheney/fzf-tab-completion): fuzzy find with tab completion
 - [fzf-tab](https://github.com/Aloxaf/fzf-tab): a better version of fzf-tab-completion imho
 - [kazam](https://github.com/henrywoo/kazam "https://github.com/henrywoo/kazam"): screen recording
+- [fzf-history-search](https://github.com/joshskidmore/zsh-fzf-history-search): search better in history
 
 ## Pbcopy and Pbpaste
 #alias

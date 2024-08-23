@@ -1,4 +1,5 @@
 #IDE #code
+
 ## Debugging
 
 Debugging in vscode is done by creating a `.vscode/launch.json` file in your repository.
@@ -22,3 +23,15 @@ Debugging in vscode is done by creating a `.vscode/launch.json` file in your r
   ]
 }
 ```
+
+# Handy keybinds
+
+| Description              | Keybind                                                        |
+| ------------------------ | -------------------------------------------------------------- |
+| Go to last edit location | Control + K, Control + Q                                       |
+| Go to matching bracket   | Control + Shift + \                                            |
+| Go to definition         | F12                                                            |
+| Go to type definition    | Not bound by default, check `editor.action.goToTypeDefinition` |
+| Go to implementation     | Ctrl + F12                                                     |
+| SmartSelect grow         | Shift + Alt + →                                                |
+| SmartSelect shrink       | Shift + Alt + ←                                                |

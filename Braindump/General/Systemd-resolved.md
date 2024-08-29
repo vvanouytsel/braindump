@@ -1,4 +1,5 @@
 #linux #sytemd
+
 ## Enable Systemd-resolved
 
 - Use the local stub file used by systemd
@@ -49,3 +50,21 @@ $ rm -rf /run/systemd/resolve/stub-resolv.conf
 
 References:  
 [https://www.freedesktop.org/software/systemd/man/systemd-resolved.service.html](https://www.freedesktop.org/software/systemd/man/systemd-resolved.service.html "https://www.freedesktop.org/software/systemd/man/systemd-resolved.service.html") [https://wiki.archlinux.org/index.php/Systemd-resolved#Configuration](https://wiki.archlinux.org/index.php/Systemd-resolved#Configuration "https://wiki.archlinux.org/index.php/Systemd-resolved#Configuration")
+
+## Resolvectl
+
+* List domain settings
+
+```bash
+ ❯ resolvectl domain                          
+Global:
+Link 2 (wwan0):
+Link 3 (enp0s31f6):
+Link 4 (wlp0s20f3): company.net
+```
+
+* Set search domain for specific interface
+
+```bash
+❯ sudo resolvectl domain wlp0s20f3 company.net
+```

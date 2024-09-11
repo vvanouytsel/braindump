@@ -29,5 +29,8 @@ To verify if a public key matches a private key
 You can specify a jump host when using SSH. Your SSH connection will pass through the specified jump host, but the private key on your local system will be used. This is a great alternative if you cannot reach a target server locally, but don't want to copy your private key to a jump host.
 
 ```bash
-ssh user@my-targetserver -J my-jumpserver
+$ ssh user@my-targetserver -J my-jumpserver
+
+# You can use the same principle with scp
+$ scp -J my-jumpserver user@my-targetserver:/tmp/file /tmp
 ```

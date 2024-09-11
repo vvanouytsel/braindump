@@ -81,7 +81,7 @@ font_size 13
 | Swap current tab with tab of choice | Ctrl + Shift + F8      |
 | Resize current tab                  | Ctrl + Shift + R       |
 | Navigate to screen left/right       | Ctrl + Shift + <- / -> |
-| Navigate to tab left/right/up/down  | Ctrl + <- / -> / ↑ / ↓  |
+| Navigate to tab left/right/up/down  | Ctrl + <- / -> / ↑ / ↓ |
 
 ## Warp
 

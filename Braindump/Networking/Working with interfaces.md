@@ -1,7 +1,5 @@
 #linux #networking 
 
-NetworkManager is daemon used to provide networking services to a Linux based machine.
-
 ## Naming convention
 
 By default interfaces are named using a pre-defined naming conventions. This is handled by `udevd`.
@@ -21,6 +19,29 @@ For example:
 	* Ethernet interface
 	* Onboard card
 	* 16777737 is an unique ID
+
+# ip
+
+The `ip` command allows you to deal with networking interfaces. It should be available on most Linux distributions. Alternatively it can be installed via the `iproute` package.
+
+## Commands
+
+* Show physical state of interfaces
+
+```bash
+$ ip link show
+```
+
+* Show configuration of interfaces
+
+```bash
+$ ip addr show
+# NetworkManager
+```
+
+# NetworkManager
+
+NetworkManager is daemon used to provide networking services to a Linux based machine.
 
 References:
 * [What NetworkManager is](https://www.youtube.com/watch?v=EfILlEkmF9k)
@@ -43,17 +64,7 @@ Consider a machine which is usually connected to a DHCP-enabled network, but som
 
 ## Commands
 
-* Show physical state of interfaces
-
 ```bash
-$ ip link show
-```
-
-* Show configuration of interfaces
-
-```bash
-$ ip addr show
-```
 
 * Show status all devices
 
@@ -83,4 +94,32 @@ $ nmcli connection modify my-connection ipv4.addresses 192.168.0.10/24 ipv4.meth
 
 ```bash
 $ nmcli connection up my-connection
+```
+
+# Bridge
+
+A networking bridge is a way to connect multiple interfaces together and treat them as a single logical unit.
+
+## Commands
+
+* List all interfaces connected to a bridge
+
+```bash
+# Take note of the 'master' keyword.
+# This indicates the bridge that the listed interface belongs to.
+
+$ bridge link show   
+13: virbr0-nic state DOWN : <BROADCAST,MULTICAST> mtu 1500 master virbr0 state disabled priority 32 cost 100 
+14: vnet0 state UNKNOWN : <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1400 master br0.4091 state forwarding priority 32 cost 100 
+15: vnet1 state UNKNOWN : <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1400 master br0.4090 state forwarding priority 32 cost 100 
+271: enp98s0f0.4089 state UP @enp98s0f0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1400 master br0.4089 state forwarding priority 32 cost 4 
+271: enp98s0f0.4089 state UP @enp98s0f0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1400 master br0.4089 
+273: enp98s0f0.4090 state UP @enp98s0f0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1400 master br0.4090 state forwarding priority 32 cost 4 
+273: enp98s0f0.4090 state UP @enp98s0f0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1400 master br0.4090 
+274: enp98s0f0.4091 state UP @enp98s0f0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1400 master br0.4091 state forwarding priority 32 cost 4 
+274: enp98s0f0.4091 state UP @enp98s0f0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1400 master br0.4091 
+334: vnet3 state UNKNOWN : <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1400 master br0.4090 state forwarding priority 32 cost 100 
+366: vnet4 state UNKNOWN : <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1400 master br0.4090 state forwarding priority 32 cost 100 
+412: vnet2 state UNKNOWN : <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1400 master br0.4090 state forwarding priority 32 cost 100 
+414: vnet5 state UNKNOWN : <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1400 master br0.4090 state forwarding priority 32 cost 100 
 ```

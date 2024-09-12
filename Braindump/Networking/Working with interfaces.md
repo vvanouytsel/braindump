@@ -123,3 +123,50 @@ $ bridge link show
 412: vnet2 state UNKNOWN : <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1400 master br0.4090 state forwarding priority 32 cost 100 
 414: vnet5 state UNKNOWN : <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1400 master br0.4090 state forwarding priority 32 cost 100 
 ```
+
+# Putting it together
+
+Let's assume we are going to make the example in the schematic. A single bridge that has an IP configured. On this bridge there is a single VLAN interfaces attached.
+
+![[Pasted image 20240912152441.png]]
+
+* Create the bridge
+
+```bash
+$ nmcli conn add type bridge con-name br4094 ifname br4094 ipv4.addresses 10.10.10.5/24 ipv4.method manual
+```
+
+* Create a VLAN interface
+
+```bash
+$ nmcli conn add type vlan con-name br4094-vlan dev enp193s0f0np0 id 4094 master br4094
+```
+
+* List the devices
+
+```bash
+$ nmcli device status
+DEVICE           TYPE      STATE                                  CONNECTION    
+enp193s0f0np0    ethernet  connected                              enp193s0f0np0 
+br4094           bridge    connected                              br4094        
+enp193s0f0.4094  vlan      connected                              br4094-vlan   
+```
+
+* List the connections
+
+```bash
+$ nmcli connection show
+NAME           UUID                                  TYPE      DEVICE          
+enp193s0f0np0  fd51bbab-53ea-43ac-b2cf-34dfde102961  ethernet  enp193s0f0np0   
+br4094         84bdd541-ce7d-4b9b-8a7f-744cd957d127  bridge    br4094          
+br4094-vlan    9b083fb1-7f64-4707-a96c-edd071d864e6  vlan      enp193s0f0.4094 
+```
+
+* List the bridges
+
+```bash
+# You can see that the device `enp193s0f0.4091` is linked to `enp193s0f0np0`
+# You can also see that this interface is a slave in the bridge `br4091`
+$ bridge link show
+9: enp193s0f0.4091@enp193s0f0np0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master br4091 state forwarding priority 32 cost 100 
+```

@@ -2,6 +2,9 @@
 
 As I am transitioning from Fedora to MacOS, some of the pain points will be written down here.
 
+> [!info]
+> The MacOS specific 'command' key is referenced as ⌘.
+
 # Gnome like Workflow
 
 I was used to the GNOME workflow on my Fedora. To get the same functionality on MacOS, the following has to be done. 
@@ -64,8 +67,7 @@ I tried to adapt for 30 minutes, but since my warranty would not cover 'broken l
 
 ![[Pasted image 20240918112216.png]]
 
-
-# My changes to configuration file for application X are ignored
+# My Changes to Configuration File for Application X Are Ignored
 
 No, it is not ignored. Let's call it a feature and not a bug. If you press the the big CROSS icon on the left of your application window, you would assume that you are closing the application. But where is the fun in that, it is too logical so it is a no-go for MacOS.
 
@@ -73,4 +75,19 @@ MacOS prefers to minimize your application to the tray if you click the CLOSE bu
 
 So nope, your application is not ignoring your changes in your configuration files. You are just not restarting your application...
 
-You can close an application using 'CMD' + 'q'.
+You can close an application using '⌘' + 'q'.
+
+# Why Are My HOME and END Keys not Working?
+
+Why would you use a single key to move to the beginning or end of a line? That is way to logical and thus by design a no-go for MacOS.
+
+You know what would be way more illogical? To use TWO keys instead of one. You know what would even be more stupid? TO use TWO keys on the complete opposite of the keyboard. That way we annoy our users the most. Fantastic idea, let's implement that!
+
+In MacOS we use the ⌘ key combination with the arrow keys.
+
+**⌘ + ←**: go to beginning of line (HOME)
+**⌘ + →**: go to end of line (END)
+
+If you really want to you can tinker with a file named `DefaultKeyBinding.dict`. But there is even a better way! Stop using HOME or END and use 'ctrl' + 'a' and 'ctrl' + 'e' instead.
+
+Reference: <https://www.reddit.com/r/MacOS/comments/pz9vnu/behavior_of_the_home_and_end_keys/>

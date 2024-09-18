@@ -45,7 +45,7 @@ Reference: <https://macos-defaults.com/keyboard/applepressandholdenabled.html>
 
 # What the Hell is a 'command' Key
 
-> Why would we use USB ports if we can annoy people and use our custom 'Lightning' implementation. Heck, why should be even use the standard 'control' key? We can annoy our users even more by specifying our own standard. Let's create a 'command' key. Which is basically the same as 'control', but not really.
+> Why would we use USB ports if we can annoy people and use our custom 'Lightning' implementation. Heck, why should we even use the standard 'control' key? We can annoy our users even more by specifying our own standard. Let's create a 'command' key. Which is basically the same as 'control', but not really.
 > 
 > - Steve Jobs, when designing the MacOS system
 

@@ -57,5 +57,8 @@ I tried to adapt for 30 minutes, but since my warranty would not cover 'broken l
 
 * Navigate to **System Settings** > **Keyboard** > **Keyboard shortcuts** > **Modifier Keys** 
 * Rebind the 'Control' key to 'Command'
+* Rebind the 'Command' key to 'Control'
+* Be happy that you can now copy via 'Control' + 'c'
+* Be frustrated that you now have to use 'Command' + 'c' if you want to mimic the 'Control' + 'c' functionality in your terminal
 
 ![[Pasted image 20240918112216.png]]

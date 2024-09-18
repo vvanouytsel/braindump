@@ -63,3 +63,14 @@ I tried to adapt for 30 minutes, but since my warranty would not cover 'broken l
 * Revert your changes and just deal with the 'Command' bullshit and get used to it
 
 ![[Pasted image 20240918112216.png]]
+
+
+# My changes to configuration file for application X are ignored
+
+No, it is not ignored. Let's call it a feature and not a bug. If you press the the big CROSS icon on the left of your application window, you would assume that you are closing the application. But where is the fun in that, it is too logical so it is a no-go for MacOS.
+
+MacOS prefers to minimize your application to the tray if you click the CLOSE button. Why? Because why not? The more complex, the better, right Siri?
+
+So nope, your application is not ignoring your changes in your configuration files. You are just not restarting your application...
+
+You can close an application using 'CMD' + 'q'.

@@ -1,7 +1,11 @@
-#linux #zsh #shell
+#linux #zsh #shell #macos
 
 You can use [Oh My Zsh](https://ohmyz.sh/) as a framework for you zsh.
 There are a set of handy [[Utilities]] that you can use.
+
+# Installation
+
+https://ohmyz.sh/
 
 # Configuration
 

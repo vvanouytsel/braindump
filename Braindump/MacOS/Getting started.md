@@ -88,6 +88,11 @@ In MacOS we use the ⌘ key combination with the arrow keys.
 **⌘ + ←**: go to beginning of line (HOME)
 **⌘ + →**: go to end of line (END)
 
-If you really want to you can tinker with a file named `DefaultKeyBinding.dict`. But there is even a better way! Stop using HOME or END and use 'ctrl' + 'a' and 'ctrl' + 'e' instead.
+If you really want to you can tinker with a file named `DefaultKeyBinding.dict`. 
+
+There is another way! Stop using HOME or END and use 'ctrl' + 'a' and 'ctrl' + 'e' instead.
+
+* But that is weird because 'ctrl' + 'a' will select all the text?
+Nope, we use ⌘ + 'a' for that, welcome to MacOS! 
 
 Reference: <https://www.reddit.com/r/MacOS/comments/pz9vnu/behavior_of_the_home_and_end_keys/>

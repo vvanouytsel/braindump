@@ -60,5 +60,6 @@ I tried to adapt for 30 minutes, but since my warranty would not cover 'broken l
 * Rebind the 'Command' key to 'Control'
 * Be happy that you can now copy via 'Control' + 'c'
 * Be frustrated that you now have to use 'Command' + 'c' if you want to mimic the 'Control' + 'c' functionality in your terminal
+* Revert your changes and just deal with the 'Command' bullshit and get used to it
 
 ![[Pasted image 20240918112216.png]]

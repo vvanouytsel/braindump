@@ -97,7 +97,7 @@ Nope, we use ⌘ + 'a' for that, welcome to MacOS!
 
 Reference: <https://www.reddit.com/r/MacOS/comments/pz9vnu/behavior_of_the_home_and_end_keys/>
 
-# Uninstall an application
+# Uninstall an Application
 
 So how do I uninstall an application, do I run something like `dnf remove` or `apt purge`?
 
@@ -107,4 +107,14 @@ Instead, let's use an application to uninstall applications. Why are you laughin
 
 I see you already pulled up your VISA card, but calm down young one. This one is actually free. Just download it from the app store so that we can track your data. Also don't ask weird questions like 'how would I properly delete the application I just installed to uninstall applications' and we are golden.
 
-Reference: https://apps.apple.com/nl/app/delete-apps-uninstaller/id1033808943?mt=12
+Reference: <https://apps.apple.com/nl/app/delete-apps-uninstaller/id1033808943?mt=12>
+
+# Raycast
+
+[Raycast](https://www.raycast.com/) is an application that improves on the basic spotlight functionality.  It also comes with its own clipboard manager.
+
+# Rancher Desktop
+
+#docker #containers
+
+If you want to use `docker` on your MacOS, you will need something to. like [Rancher Desktop](https://rancherdesktop.io/). This basically spins up a Linux VM for you which hosts the daemon and your MacOS acts as a client.

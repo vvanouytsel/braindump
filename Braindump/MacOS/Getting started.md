@@ -96,3 +96,15 @@ There is another way! Stop using HOME or END and use 'ctrl' + 'a' and 'ctrl' + '
 Nope, we use ⌘ + 'a' for that, welcome to MacOS! 
 
 Reference: <https://www.reddit.com/r/MacOS/comments/pz9vnu/behavior_of_the_home_and_end_keys/>
+
+# Uninstall an application
+
+So how do I uninstall an application, do I run something like `dnf remove` or `apt purge`?
+
+Sweet summer child, haven't you learned yet? That is way to logical and as mentioned earlier, a big no-go for MacOS. You could run an uninstaller that is often part of the software that you installed, but chances are high that a lot of remnant files will be left on your system.
+
+Instead, let's use an application to uninstall applications. Why are you laughing?
+
+I see you already pulled up your VISA card, but calm down young one. This one is actually free. Just download it from the app store so that we can track your data. Also don't ask weird questions like 'how would I properly delete the application I just installed to uninstall applications' and we are golden.
+
+Reference: https://apps.apple.com/nl/app/delete-apps-uninstaller/id1033808943?mt=12

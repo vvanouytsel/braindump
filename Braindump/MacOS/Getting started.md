@@ -143,3 +143,15 @@ defaults write com.apple.finder AppleShowAllFiles YES
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 ```
+
+# Disable Scroll Acceleration
+
+You know what would be an idiotic idea? To have accelerations on your scroll wheel. Lol that would confuse literally every user ever. Fantastic let's implement it in MacOS.
+
+Oh I have a good one. Let's just not provide the user with the option to disable it. YOU WILL USE THIS COMPUTER EXACTLY HOW I WANT YOU TO. Like seriously, who even thought this was a good idea? But then again, my 2 day journey trying to get my Mac up and running already taught me that is operating system is full of shit like that.
+
+If you want to disable it, you will need an extra application (duhh). Download and [install discrete-scroll](https://www.youtube.com/watch?v=OQCwdayqxZ4), but make sure to add it to the applications that automatically start up after log in.
+
+Tada, now your device is just slightly more usable.
+
+**Reference**: [This helpful guy from youtube](https://www.youtube.com/watch?v=OQCwdayqxZ4)

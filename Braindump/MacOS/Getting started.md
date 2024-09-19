@@ -118,3 +118,28 @@ Reference: <https://apps.apple.com/nl/app/delete-apps-uninstaller/id1033808943?m
 #docker #containers
 
 If you want to use `docker` on your MacOS, you will need something to. like [Rancher Desktop](https://rancherdesktop.io/). This basically spins up a Linux VM for you which hosts the daemon and your MacOS acts as a client.
+
+# Varia
+
+Some more useful commands to improve the working experience.
+
+```bash
+# Unhide User Library Folder
+chflags nohidden ~/Library
+
+# Disable keyboard pressandhold
+defaults write -g ApplePressAndHoldEnabled -bool false
+
+# No Metadata files on network volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+# No Metadata files on USB drive
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+# Show hidden files
+defaults write com.apple.finder AppleShowAllFiles YES
+
+# Expand save panel by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+```

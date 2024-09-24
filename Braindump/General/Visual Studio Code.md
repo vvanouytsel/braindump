@@ -24,7 +24,7 @@ Debugging in vscode is done by creating a `.vscode/launch.json` file in your r
 }
 ```
 
-# Handy keybinds
+# Handy Keybinds
 
 | Description              | Keybind                                                        |
 | ------------------------ | -------------------------------------------------------------- |
@@ -33,5 +33,5 @@ Debugging in vscode is done by creating a `.vscode/launch.json` file in your r
 | Go to definition         | F12                                                            |
 | Go to type definition    | Not bound by default, check `editor.action.goToTypeDefinition` |
 | Go to implementation     | Ctrl + F12                                                     |
-| SmartSelect grow         | Shift + Alt + →                                                |
-| SmartSelect shrink       | Shift + Alt + ←                                                |
+| SmartSelect grow         | Shift + Alt + → (MacOS: **^** + **⌘** + **⌥** + **→**)         |
+| SmartSelect shrink       | Shift + Alt + ← (MacOS: **^** + **⌘** + **⌥** + **←**)         |

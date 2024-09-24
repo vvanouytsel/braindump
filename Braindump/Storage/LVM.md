@@ -1,4 +1,4 @@
-#linux 
+#linux #storage #disks
 
 ## Setting up a LV
 

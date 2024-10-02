@@ -155,3 +155,9 @@ If you want to disable it, you will need an extra application (duhh). Download a
 Tada, now your device is just slightly more usable.
 
 **Reference**: [This helpful guy from youtube](https://www.youtube.com/watch?v=OQCwdayqxZ4)
+
+# My VSCode Autocomplete Keybindings Are no Longer Workings
+
+Oh don't you worry, they are working fine. It is just that this OS decided that your keybinds suck and that it makes much more sense to bind `Control` + `Spacebar` to switch your input language instead of using it for coding.
+
+Yeah, I know, what the hell.  Change it via `System Preferences` > `Keyboard` > `Keyboard Shortcuts`.

@@ -1,4 +1,3 @@
-
 #mac #os
 
 As I am transitioning from Fedora to MacOS, some of the pain points will be written down here.
@@ -162,3 +161,19 @@ Tada, now your device is just slightly more usable.
 Oh don't you worry, they are working fine. It is just that this OS decided that your keybinds suck and that it makes much more sense to bind `Control` + `Spacebar` to switch your input language instead of using it for coding.
 
 Yeah, I know, what the hell.  Change it via `System Preferences` > `Keyboard` > `Keyboard Shortcuts`.
+
+# I want to Use My ALT (option ⌥) Key
+
+Why would you want to do that, don't you want to dedicate that ⌥ to type random characters that you will never use?
+
+No, I want to use it to work efficient. By setting keybinds in Firefox (⌥ + 1,2,3) to switch to other tabs. Alternatively I use it in VScode to switch to other tabs.
+
+Mister MacOS doesn't like that and if you really want that functionality you will have to switch you keryboard input source to `Unicode Hex Input`. 
+
+Yeah man, I know, don't ask...
+
+* Go to System Preferences > Keyboard > Input Sources
+* Select Unicode Hex Input
+* Be more efficient
+
+Reference: <https://stackoverflow.com/a/61482531>

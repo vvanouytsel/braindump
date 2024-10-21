@@ -152,7 +152,24 @@ Oh I have a good one. Let's just not provide the user with the option to disable
 
 If you want to disable it, you will need an extra application (duhh). Download and [install discrete-scroll](https://www.youtube.com/watch?v=OQCwdayqxZ4), but make sure to add it to the applications that automatically start up after log in.
 
-Tada, now your device is just slightly more usable.
+Tada, now your device is just slightly more usable. Lol joke, it doesn't work because it is an app from an 'unidentified developer'. I
+
+In order to fix that:
+
+* Open the binary to receive the warning pop
+* Navigate to `System Settings` > `Privacy & Security` > `Security` and click `Open Anyway`
+* It still doesn't work because you downloaded it via the browser, run the following
+
+```bash
+# Yeah, I know, what the hell.
+xattr -d com.apple.quarantine /Users/myuser/Downloads/DiscreteScroll.app 
+```
+
+* Tada, now you can work more efficiently
+
+Do you know how you would do this on Fedora?
+
+* You simply don't, because they don't use mouse scroll acceleration...
 
 **Reference**: [This helpful guy from youtube](https://www.youtube.com/watch?v=OQCwdayqxZ4)
 

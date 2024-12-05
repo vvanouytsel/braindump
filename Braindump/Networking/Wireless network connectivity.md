@@ -95,3 +95,29 @@ iw list
    * 5905 MHz [181] (disabled)
 ...
 ```
+
+## Specify a single AP to be used
+
+I recently had an issue where I noticed that by `NetworkManager` would lose connection. After some investigation it seemed because it was regularly switching between two access points that had similar signal strength.
+
+```bash
+Dec 05 10:38:41 viper wpa_supplicant[1883]: wlp0s20f3: SME: Trying to authenticate with 34:2c:c4:e8:ab:cd (SSID='My-Home-ID' freq=5200 MHz)
+Dec 05 10:38:41 viper kernel: wlp0s20f3: disconnect from AP 34:2c:c4:e8:ba:dc for new auth to 34:2c:c4:e8:ab:cd
+Dec 05 10:38:41 viper kernel: wlp0s20f3: authenticate with 34:2c:c4:e8:ab:cd (local address=92:fa:ba:a7:aa:bb)
+Dec 05 10:38:41 viper kernel: wlp0s20f3: send auth to 34:2c:c4:e8:ab:cd (try 1/3)
+```
+
+You can list your currently detected access points and see their strength.
+
+```bash
+ ❯ nmcli dev wifi list                                                              
+IN-USE  BSSID              SSID                              MODE   CHAN  RATE        SIGNAL  BARS  SECURITY    
+*       34:2c:c4:e8:ba:dc  My-Home-ID                   Infra  44    405 Mbit/s  66      ▂▄▆_  WPA2        
+        34:2c:c4:e8:ab:cd  My-Home-ID                   Infra  40    405 Mbit/s  59      ▂▄▆_  WPA2     
+```
+
+Configure `NetworkManager` to always use a specific access point. This disables roaming.
+
+```bash
+nmcli connection modify "My-Home-ID" 802-11-wireless.bssid 34:2c:c4:e8:ba:dc
+```

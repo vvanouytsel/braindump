@@ -1,11 +1,15 @@
-#ai #utilities
+---
+tags:
+  - ai
+  - utilities
+---
 
-fabric is an open-source framework for augmenting humans using AI. It provides a modular framework for solving specific problems using a crowdsourced set of AI prompts that can be used anywhere.  
+fabric is an open-source framework for augmenting humans using AI. It provides a modular framework for solving specific problems using a crowdsourced set of AI prompts that can be used anywhere.
 [danielmiessler/fabric](https://github.com/danielmiessler/fabric)
 
 ## Installation
 
-> [!info]  
+> [!info]
 > Fabric is switching to a go installer in the future.
 
  Navigate to where you want the Fabric project to live on your system in a semi-permanent place on your computer.
@@ -61,6 +65,7 @@ fabric --help
 ```
 
 FFmpeg is a command-line tool that records, transcodes, mixes, formats, and streams multimedia content. If we don't install it, our prompts get a warning.
+
 ```bash
 apt install ffmpeg
 ```

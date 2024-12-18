@@ -1,6 +1,10 @@
-#browsers #firefox
+---
+tags:
+  - browsers
+  - firefox
+---
 
-# Switching between Tabs
+## Switching between Tabs
 
 By default on Linux the keybindings `Alt` + number are used to switch between tabs. On Windows and MacOS however `Control` and `Command` are used instead.
 

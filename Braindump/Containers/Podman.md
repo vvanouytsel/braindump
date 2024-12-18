@@ -1,4 +1,7 @@
-#containers
+---
+tags:
+  - containers
+---
 
 ## Authentication
 
@@ -8,7 +11,7 @@ You can use `login` to authenticate with a registry.
 podman login my-repo.domain.com
 ```
 
-By default your token is stored in `${XDG_RUNTIME_DIR}` and is removed on boot. If you want make it persistent you can use an `authfile`. 
+By default your token is stored in `${XDG_RUNTIME_DIR}` and is removed on boot. If you want make it persistent you can use an `authfile`.
 
 ```bash
 podman login --authfile $HOME/.config/containers/auth.json my-repo.domain.com
@@ -26,7 +29,7 @@ If your container runs as a different user, for example '472', then this will be
          1     524288      65536
 ```
 
-In the above command you can see that the container UID of 0 is mapped to my local OS uid of 1000. Which is my regular user. 
+In the above command you can see that the container UID of 0 is mapped to my local OS uid of 1000. Which is my regular user.
 
 A UID of 1 in the container would be mapped to 524288.
 A UID of 10 in the container would be mapped to 524298.

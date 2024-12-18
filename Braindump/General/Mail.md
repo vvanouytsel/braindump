@@ -1,4 +1,9 @@
-#linux #postfix #smtp
+---
+tags:
+  - linux
+  - postfix
+  - smtp
+---
 
 ## Sendmail
 

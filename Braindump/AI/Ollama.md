@@ -1,4 +1,7 @@
-#ai
+---
+tags:
+  - ai
+---
 
 [Ollama](https://www.ollama.com/) allows to run your own LLM locally on your device.
 ## Installation
@@ -22,12 +25,13 @@ By default Ollama is installed on your C:\ drive. You can change this if you set
 
 Ollama has a registry where you can pull and push models from/to.
 
-You can find the list of models in their registry via the [library](https://ollama.com/library).  
+You can find the list of models in their registry via the [library](https://ollama.com/library).
 To run a model from a registry you can specify the `run` command.
 
 ```bash
 ollama run rouge/daybreak-kunoichi-2dpo-7b
 ```
+
 ### Create Custom Model
 
 * Create a modelfile based on an existing model
@@ -104,7 +108,7 @@ ollama run lexi-llama3-uncensored
 [Ollama + HuggingFace ✅🔥. Create Custom Models From Huggingface… | by Sudarshan Koirala | Medium](https://medium.com/@sudarshan-koirala/ollama-huggingface-8e8bc55ce572)
 ## API
 
-Once your Ollama application is [[Ollama#Installation|running]], you can query it via the [API](https://github.com/ollama/ollama/blob/main/docs/api.md).  
+Once your Ollama application is [[Ollama#Installation|running]], you can query it via the [API](https://github.com/ollama/ollama/blob/main/docs/api.md).
 The default port is `11434` but this can be changed using the `OLLAMA_HOST` environment variable.
 
 ### Completion
@@ -119,6 +123,7 @@ curl http://localhost:11434//api/generate -d '{
 ```
 
 Alternatively in Powershell:
+
 ```powershell
 Invoke-RestMethod -Uri "http://localhost:11434/api/generate" -Method Post -Body '{"model": "storyteller", "prompt": "The Duke of Cambridge enters my court hall. He kneels in front of me."}' -ContentType "application/json"
 ```
@@ -130,6 +135,7 @@ Invoke-RestMethod -Uri "http://localhost:11434/api/generate" -Method Post -Body 
 ```
 
 Optionally you can overwrite the `system` message in the prompt to specify what instructions the model should follow.
+
 ```powershell
 Invoke-RestMethod -Uri "http://localhost:11434/api/generate" -Method Post -Body '{"model": "storyteller", "prompt": "The Duke of Cambridge enters my court hall. He kneels in front of me.", "stream": false, "system": "You are a dog and you only bark"}' -ContentType "application/json"
 

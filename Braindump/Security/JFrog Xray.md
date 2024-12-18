@@ -1,4 +1,10 @@
-#sbom #software-composition-analysis #security
+---
+tags:
+  - sbom
+  - software-composition-analysis
+  - security
+---
+
 JFrog has a tool named `xray` which can be used to perform software composition analysis.
 JFrog has its own vulnerability database that it uses to interact with Xray.
 

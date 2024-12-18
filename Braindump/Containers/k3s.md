@@ -1,4 +1,8 @@
-#containers
+---
+tags:
+  - containers
+---
+
 ## Recover from Expired Certificates
 
 Certificates managed and used by k3s are valid for 1 year. During k3s startup, the remaining time of these certificates are checked. If the remaining time is less than 90 days, k3s will rotate these certificates so they are valid for another year. However if you find yourself in a situation where the certificates are not rotated and they are expired, you can recover from it using the following steps.

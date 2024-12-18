@@ -1,10 +1,14 @@
-#linux #security 
+---
+tags:
+  - linux
+  - security
+---
 
 SELinux is **a set of kernel modifications and user-space tools that have been added to various Linux distributions**. Its architecture strives to separate enforcement of security decisions from the security policy, and streamlines the amount of software involved with security policy enforcement.
 
 A fantastic blogpost can be read [here](https://github.blog/developer-skills/programming-languages-and-frameworks/introduction-to-selinux/).
 
-# Working with SELinux
+## Working with SELinux
 
 List all the SELinux users.
 
@@ -43,7 +47,7 @@ comm=72733A6D61696E20513A526567 name="messages" dev="sda3" ino=255765 scontext=s
 
 Alternatively you can also use `ausearch` to list AVC denials.
 
-# A Practical Example
+## A Practical Example
 
 Via `ausearch` you get the following output.
 
@@ -67,7 +71,7 @@ This SELinux audit log entry describes a denied execution attempt. Let's break i
 	- Process ID (pid): 5329
 	- Parent Process ID (ppid): 1 (likely systemd)
 	- Executable: "/usr/lib/systemd/systemd"
-3. Attempted Action:	
+3. Attempted Action:
 	- Syscall: 21 (execve - execute program)
 	- Result: Failed (success=no, exit=-13 which means EACCES: Permission denied)
 4. File Information:
@@ -75,9 +79,9 @@ This SELinux audit log entry describes a denied execution attempt. Let's break i
 	- Located on device: dm-1
 	- Inode: 9699340
 5. SELinux Contexts:
-	- Source context (scontext): system_u:system_r:init_t:s0  
+	- Source context (scontext): system_u:system_r:init_t:s0
 		(The process running under the init_t domain)
-	- Target context (tcontext): unconfined_u:object_r:mnt_t:s0  
+	- Target context (tcontext): unconfined_u:object_r:mnt_t:s0
 		(The file with mnt_t type, typically used for mounted filesystems)
 6. Denial Details:
 	- Access Vector Cache (AVC) denied the "execute" permission
@@ -107,7 +111,7 @@ semanage fcontext -a -t usr_t "/mnt/data/bamboo-agent-home(/.*)?"
 restorecon -R -v /mnt/data/bamboo-agent-home
 ```
 
-# Troubleshooting
+## Troubleshooting
 
 Show recent blocked actions by SELinux.
 
@@ -122,7 +126,7 @@ Temporary switch to permissive until next boot.
 setenforce 0
 ```
 
-Enable full path logging. 
+Enable full path logging.
 
 This will make your journalctl logs a lot more readable. However you probably only want to enable this to reproduce the problem and disable it afterwards.
 

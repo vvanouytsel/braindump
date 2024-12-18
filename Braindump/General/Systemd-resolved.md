@@ -1,4 +1,8 @@
-#linux #sytemd
+---
+tags:
+  - linux
+  - systemd
+---
 
 ## Enable Systemd-resolved
 
@@ -48,7 +52,7 @@ Global
 $ rm -rf /run/systemd/resolve/stub-resolv.conf
 ```
 
-References:  
+References:
 [https://www.freedesktop.org/software/systemd/man/systemd-resolved.service.html](https://www.freedesktop.org/software/systemd/man/systemd-resolved.service.html "https://www.freedesktop.org/software/systemd/man/systemd-resolved.service.html") [https://wiki.archlinux.org/index.php/Systemd-resolved#Configuration](https://wiki.archlinux.org/index.php/Systemd-resolved#Configuration "https://wiki.archlinux.org/index.php/Systemd-resolved#Configuration")
 
 ## Resolvectl

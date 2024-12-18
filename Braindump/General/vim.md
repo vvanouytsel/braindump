@@ -1,19 +1,25 @@
-#terminal #linux 
+---
+tags:
+  - linux
+  - terminal
+---
 
 So you want to be a hipster, I mean be efficient and learn vim keybindings?
 As with everything, the beginning will be hard, but all it takes is practice and muscle memory.
 
-### Getting help
+## Getting help
 
 You can't learn this by simply reading. Make sure to practice often and use the available manuals and tutorials, they are actually quite good.
 
 Use `vimtutor` as an excellent beginner tutorial.
-```
+
+```bash
 vimtutor
 ```
 
 Read up on a specific topic.
-```
+
+```bash
 # Seriously, you can get help about everything
 :help word
 :help WORD
@@ -57,14 +63,13 @@ Read up on a specific topic.
 > [!info]
 > Keys can be prefixed with an number. For example `20 k` moves you up 20 times.
 
-
 > [!info]
 > `WORD` is not the same as `word`.
 > `WORD` is always delimited by whitespace.
 > * `ansible.builtin.import_role:` is a single `WORD`.
 >
 >`word` is delimited by non-keyword characters.
->All of these are separate `words`: 
+>All of these are separate `words`:
 > * `ansible`
 > * `.`
 > * `builtin`
@@ -120,14 +125,12 @@ Read up on a specific topic.
 
 ### Advanced
 
-
 | Description                    | Key                                                                               |
 | ------------------------------ | --------------------------------------------------------------------------------- |
 | Start recording                | q + character<br>q + a stored recording as a                                      |
 | Stop recording                 | q                                                                                 |
 | Apply recording                | @ + character<br>@ + a applies recording a<br>15 + @ + a applies macro a 15 times |
 | Enable relative line numbering | :set relativenumber                                                               |
-
 
 ### Switching modes
 
@@ -141,7 +144,6 @@ Read up on a specific topic.
 | Insert mode before current line           | O       |
 | Change word and switch to insert mode     | c + w   |
 | Change full line and sitch to insert mode | c + c   |
-
 
 ## Insert mode
 
@@ -168,10 +170,9 @@ Vim uses a set of registers. You can use these register using the `"` key.
 
 > [!info]
 > If you do not have a system (`+`) register, make sure to install `vim-gtk3`.
-> ```
+> ```bash
 > apt install vim-gtk3
 > ```
-
 
 | Description             | Key                                                                                                                                                 |
 | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |

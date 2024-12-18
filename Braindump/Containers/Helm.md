@@ -1,4 +1,9 @@
-* Show the values deployed together with a helm chart
+---
+tags:
+  - helm
+---
+
+*  Show the values deployed together with a helm chart
 
 ```bash
 ❯ helm get values -n mynamespace mychart

@@ -1,4 +1,9 @@
-#networking #wifi
+---
+tags:
+  - networking
+  - wifi
+---
+
 List wireless interfaces
 
 ```bash

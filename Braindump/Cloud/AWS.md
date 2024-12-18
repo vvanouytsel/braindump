@@ -1,20 +1,21 @@
-#aws #cloud 
+---
+tags:
+  - cloud
+  - aws
+---
+
 ## IAM
 
 For physical users:
 
 * Specify `Policies` to `Users`
-
 * Specify `Policies` to `Groups`
-
 * Add `Users` to `Groups`
 
 For services:
 
 * Add `Policies` to `Roles`
-
 * Add `Roles` to `Services`
-
 * Always use IAM Roles to provide permissions to services
 
 e.g. Never configure AWS credentials in your EC2 instance, instead attach the necessary permissions to your instance. (example: `IAMReadOnlyAccess` if you want to use `aks iam list-users`)

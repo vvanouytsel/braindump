@@ -1,6 +1,11 @@
-#storage #linux #disks
+---
+tags:
+  - storage
+  - linux
+  - disks
+---
 
-# Working with Devices
+## Working with Devices
 
 In Linux, your storage disks are available as block devices in `/dev/`.
 
@@ -115,7 +120,7 @@ Consistency Policy : bitmap
        1     259       11        1      active sync   /dev/nvme2n1p3
 ```
 
-# Disk IDs
+## Disk IDs
 
 During boot names are assigned to your disks. For example `/dev/nvme0n1`.  However these names are not persistent. If you need to make sure that you are always using the exact same disk, you will have to use IDs instead.
 

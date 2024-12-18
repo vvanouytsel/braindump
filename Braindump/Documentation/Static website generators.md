@@ -1,4 +1,7 @@
-#documentation
+---
+tags:
+  - documentation
+---
 
 The documentation source is stored in Git. This works, but when consulting the documentation on other devices I will have to constantly pull and push from the git repository. This is not ideal. A better solution would be to have the pipeline convert the markdown files to HTML files and serve these HTML files directly instead. We can use static website generators for that.
 

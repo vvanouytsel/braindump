@@ -1,4 +1,8 @@
-#IDE #code
+---
+tags:
+  - IDE
+  - code
+---
 
 ## Debugging
 
@@ -24,7 +28,7 @@ Debugging in vscode is done by creating a `.vscode/launch.json` file in your r
 }
 ```
 
-# Handy Keybinds
+## Handy Keybinds
 
 | Description              | Keybind                                                        |
 | ------------------------ | -------------------------------------------------------------- |

@@ -1,4 +1,8 @@
-#linux #security
+---
+tags:
+  - linux
+  - security
+---
 
 - You can use `auditctl` and `ausearch` to figure out which process (and when) changed a file
 - Create a test file

@@ -1,4 +1,9 @@
-#security #linux #ssl
+---
+tags:
+  - security
+  - linux
+  - ssl
+---
 
 - Verify that a public key in a certificate matches a private key
 

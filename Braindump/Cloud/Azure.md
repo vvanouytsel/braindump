@@ -1,4 +1,9 @@
-#azure #cloud
+---
+tags:
+  - azure
+  - cloud
+---
+
 ## Authentication
 
 ### Username and Password
@@ -12,7 +17,7 @@ az login
 
 ### Service Principals
 
-Service principals are identities used by automated tooling to authenticate with Azure.  
+Service principals are identities used by automated tooling to authenticate with Azure.
 Create a service principal
 
 ```bash

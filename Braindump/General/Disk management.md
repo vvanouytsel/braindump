@@ -1,6 +1,9 @@
-#linux 
+---
+tags:
+  - linux
+---
 
-# dd
+## Dd
 
 * Wipe the partition table, boot loader and other metadata from a disk
 

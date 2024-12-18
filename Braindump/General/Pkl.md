@@ -1,4 +1,7 @@
-#language
+---
+tags:
+  - language
+---
 
 Pkl (pronounced as 'pickle') is a configuration language that aims to be programmable, scalable and safe.
 
@@ -19,7 +22,7 @@ code --install-extension ~/Downloads/pkl-vscode-0.17.0.vsix
 
 Evaluate a `pkl` file.
 
-```
+```bash
 pkl eval myfile.pkl
 
 # Print in json format
@@ -295,7 +298,7 @@ taxonomy {
 
 By using `amends` the `pigeon` amended module is no longer printed.
 
-```
+```bash
 ❯ pkl eval dog.pkl
 name = "Common wood pigeon"
 diet = "Meat"
@@ -314,7 +317,7 @@ A `Pkl` file is either a  'normal' module or a template. The only difference bet
 
 `Pkl` supports the following basic types:
 
-```
+```bash
 name: String = "Writing a Template"
 part: Int = 3
 hasExercises: Boolean = true

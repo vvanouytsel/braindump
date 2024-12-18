@@ -1,4 +1,9 @@
-#security #software-composition-analysis #sbom
+---
+tags:
+  - security
+  - software-composition-analysis
+  - sbom
+---
 
 An SBOM is a Software Bill of Materials and contains all the dependencies (and their dependencies) of your code.
 

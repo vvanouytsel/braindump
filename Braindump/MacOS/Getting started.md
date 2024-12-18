@@ -1,13 +1,17 @@
-#mac #os
+---
+tags:
+  - macos
+  - postfix
+---
 
 As I am transitioning from Fedora to MacOS, some of the pain points will be written down here.
 
 > [!info]
 > The MacOS specific 'command' key is referenced as ⌘.
 
-# Gnome like Workflow
+## Gnome like Workflow
 
-I was used to the GNOME workflow on my Fedora. To get the same functionality on MacOS, the following has to be done. 
+I was used to the GNOME workflow on my Fedora. To get the same functionality on MacOS, the following has to be done.
 
 - Open Mission Control by swiping up with three fingers, pressing `F3` or  `CMD` + `Arrow up`.
 - Add new Spaces by clicking the "+" button at the top.
@@ -27,7 +31,7 @@ At this point I was already tired of MacOS (literally 15 minutes into the transi
 
 * <https://www.fadel.io/missioncontrolplus>
 
-# Hold Key and Print Multiple Characters
+## Hold Key and Print Multiple Characters
 
 I can't even believe I have to write this. If you have read my frustration above, I just needed to ventilate a bit. So I went to my terminal and started to type 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' as that often helps to ease my frustration.
 
@@ -46,10 +50,10 @@ After logging out and in again, I was able to ventilate.
 
 Reference: <https://macos-defaults.com/keyboard/applepressandholdenabled.html>
 
-# What the Hell is a 'command' Key
+## What the Hell is a 'command' Key
 
 > Why would we use USB ports if we can annoy people and use our custom 'Lightning' implementation. Heck, why should we even use the standard 'control' key? We can annoy our users even more by specifying our own standard. Let's create a 'command' key. Which is basically the same as 'control', but not really.
-> 
+>
 > - Steve Jobs, when designing the MacOS system
 
 Yeah, I am not going to even bother explaining but basically there is a 'command' key that takes over the 'control' key that you are so used to for working with computers in the last 30 years.
@@ -58,7 +62,7 @@ Either suck it up and get used to it, or whine about it and remap the 'command' 
 
 I tried to adapt for 30 minutes, but since my warranty would not cover 'broken laptop after smashing against the wall' I had decided to simply rebind those keys.
 
-* Navigate to **System Settings** > **Keyboard** > **Keyboard shortcuts** > **Modifier Keys** 
+* Navigate to **System Settings** > **Keyboard** > **Keyboard shortcuts** > **Modifier Keys**
 * Rebind the 'Control' key to 'Command'
 * Rebind the 'Command' key to 'Control'
 * Be happy that you can now copy via 'Control' + 'c'
@@ -67,7 +71,7 @@ I tried to adapt for 30 minutes, but since my warranty would not cover 'broken l
 
 ![[Pasted image 20240918112216.png]]
 
-# My Changes to Configuration File for Application X Are Ignored
+## My Changes to Configuration File for Application X Are Ignored
 
 No, it is not ignored. Let's call it a feature and not a bug. If you press the the big CROSS icon on the left of your application window, you would assume that you are closing the application. But where is the fun in that, it is too logical so it is a no-go for MacOS.
 
@@ -77,7 +81,7 @@ So nope, your application is not ignoring your changes in your configuration fil
 
 You can close an application using '⌘' + 'q'.
 
-# Why Are My HOME and END Keys not Working?
+## Why Are My HOME and END Keys not Working?
 
 Why would you use a single key to move to the beginning or end of a line? That is way to logical and thus by design a no-go for MacOS.
 
@@ -88,16 +92,16 @@ In MacOS we use the ⌘ key combination with the arrow keys.
 **⌘ + ←**: go to beginning of line (HOME)
 **⌘ + →**: go to end of line (END)
 
-If you really want to you can tinker with a file named `DefaultKeyBinding.dict`. 
+If you really want to you can tinker with a file named `DefaultKeyBinding.dict`.
 
 There is another way! Stop using HOME or END and use 'ctrl' + 'a' and 'ctrl' + 'e' instead.
 
 * But that is weird because 'ctrl' + 'a' will select all the text?
-Nope, we use ⌘ + 'a' for that, welcome to MacOS! 
+Nope, we use ⌘ + 'a' for that, welcome to MacOS!
 
 Reference: <https://www.reddit.com/r/MacOS/comments/pz9vnu/behavior_of_the_home_and_end_keys/>
 
-# Uninstall an Application
+## Uninstall an Application
 
 So how do I uninstall an application, do I run something like `dnf remove` or `apt purge`?
 
@@ -109,17 +113,17 @@ I see you already pulled up your VISA card, but calm down young one. This one is
 
 Reference: <https://apps.apple.com/nl/app/delete-apps-uninstaller/id1033808943?mt=12>
 
-# Raycast
+## Raycast
 
 [Raycast](https://www.raycast.com/) is an application that improves on the basic spotlight functionality.  It also comes with its own clipboard manager.
 
-# Rancher Desktop
+## Rancher Desktop
 
 #docker #containers
 
 If you want to use `docker` on your MacOS, you will need something to. like [Rancher Desktop](https://rancherdesktop.io/). This basically spins up a Linux VM for you which hosts the daemon and your MacOS acts as a client.
 
-# Varia
+## Varia
 
 Some more useful commands to improve the working experience.
 
@@ -144,7 +148,7 @@ defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 ```
 
-# Disable Scroll Acceleration
+## Disable Scroll Acceleration
 
 You know what would be an idiotic idea? To have accelerations on your scroll wheel. Lol that would confuse literally every user ever. Fantastic let's implement it in MacOS.
 
@@ -173,19 +177,19 @@ Do you know how you would do this on Fedora?
 
 **Reference**: [This helpful guy from youtube](https://www.youtube.com/watch?v=OQCwdayqxZ4)
 
-# My VSCode Autocomplete Keybindings Are no Longer Workings
+## My VSCode Autocomplete Keybindings Are no Longer Workings
 
 Oh don't you worry, they are working fine. It is just that this OS decided that your keybinds suck and that it makes much more sense to bind `Control` + `Spacebar` to switch your input language instead of using it for coding.
 
 Yeah, I know, what the hell.  Change it via `System Preferences` > `Keyboard` > `Keyboard Shortcuts`.
 
-# I want to Use My ALT (option ⌥) Key
+## I want to Use My ALT (option ⌥) Key
 
 Why would you want to do that, don't you want to dedicate that ⌥ to type random characters that you will never use?
 
 No, I want to use it to work efficient. By setting keybinds in Firefox (⌥ + 1,2,3) to switch to other tabs. Alternatively I use it in VScode to switch to other tabs.
 
-Mister MacOS doesn't like that and if you really want that functionality you will have to switch you keryboard input source to `Unicode Hex Input`. 
+Mister MacOS doesn't like that and if you really want that functionality you will have to switch you keryboard input source to `Unicode Hex Input`.
 
 Yeah man, I know, don't ask...
 

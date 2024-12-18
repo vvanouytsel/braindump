@@ -1,4 +1,7 @@
-#linux
+---
+tags:
+  - linux
+---
 
 You can use `htop` to see memory and cpu usage of processes.
 

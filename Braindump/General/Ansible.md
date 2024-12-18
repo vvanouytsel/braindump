@@ -1,4 +1,8 @@
-#iac #ansible
+---
+tags:
+  - iac
+  - ansible
+---
 
 ## Working with Strings
 
@@ -19,9 +23,9 @@ private_key: |
 
 ## Omitting Module Parameters
 
-You can omit a module parameter if you do not want it to be set. 
+You can omit a module parameter if you do not want it to be set.
 
-For example, notice that the `hostname` module allows you to set the `use` variable as optional. If not set the module tries to autodetect which method to use. 
+For example, notice that the `hostname` module allows you to set the `use` variable as optional. If not set the module tries to autodetect which method to use.
 
 ```yaml
 - name: Set a hostname

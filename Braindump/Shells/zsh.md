@@ -1,13 +1,19 @@
-#linux #zsh #shell #macos
+---
+tags:
+  - linux
+  - zsh
+  - shell
+  - macos
+---
 
 You can use [Oh My Zsh](https://ohmyz.sh/) as a framework for you zsh.
 There are a set of handy [[Utilities]] that you can use.
 
-# Installation
+## Installation
 
-https://ohmyz.sh/
+<https://ohmyz.sh/>
 
-# Configuration
+## Configuration
 
 Configuration of your zsh is done via the `~/.zshrc` file. This is loaded whenever you open up a new shell. Whenever you make any changes in this file, you either need to source the file or reopen your shell.
 

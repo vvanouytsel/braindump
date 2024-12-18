@@ -1,4 +1,7 @@
-#linux
+---
+tags:
+  - linux
+---
 
 ## Tmux
 
@@ -29,7 +32,7 @@ ibus restart
 
 ## Kitty
 
-[Kitty](https://sw.kovidgoyal.net/kitty/overview/ "https://sw.kovidgoyal.net/kitty/overview/") is a very cool terminal, a replacement for terminator that I used before.  
+[Kitty](https://sw.kovidgoyal.net/kitty/overview/ "https://sw.kovidgoyal.net/kitty/overview/") is a very cool terminal, a replacement for terminator that I used before.
 A cool font to use is [Victor Mono](https://fonts.google.com/specimen/Victor+Mono "https://fonts.google.com/specimen/Victor+Mono")
 
 Kitty doesn't work properly with SSH due to some terminal stuff. You can use `kitten` to fix that.

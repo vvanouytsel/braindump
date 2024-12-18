@@ -1,4 +1,9 @@
-#linux #storage #disks
+---
+tags:
+  - linux
+  - storage
+  - disks
+---
 
 ## Setting up a LV
 

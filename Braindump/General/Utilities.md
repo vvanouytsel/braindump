@@ -1,4 +1,8 @@
-#linux #utilities  
+---
+tags:
+  - linux
+  - utilities
+---
 
 - [autojump](https://github.com/wting/autojump "https://github.com/wting/autojump"): easily jump to frequently used directories
 - [powerlevel10k](https://github.com/romkatv/powerlevel10k "https://github.com/romkatv/powerlevel10k"): theme for [[zsh]]

@@ -1,8 +1,11 @@
-#ai
+---
+tags:
+  - ai
+---
 
 There are a million of models that you can run locally. There is a big difference between these models. In this page I try to make a summary on how to find a correct model for your usecase.
 
-This video is a very nice introduction about the rabbit hole of running LLMs.  
+This video is a very nice introduction about the rabbit hole of running LLMs.
 [All You Need To Know About Running LLMs Locally - YouTube](https://www.youtube.com/watch?v=XwL_cRuXM2E)
 
 ## SillyTavern
@@ -13,7 +16,7 @@ Once installed, SillyTavern is available at <http://127.0.0.1:8000/>.
 
 ## LM Studio
 
-[LM Studio](https://lmstudio.ai/) is a tools that allows you to run models locally. You can download models directly from [[Ollama#Running Models from Hugging Face|Ollama]] through this interface. It is literally dead simple that I won't even write documentation about it. Just download a model, run an API server and be done with it. Typically I would use LM Studio to try out different models and once I made my decision, I would run it via [[Ollama]].  
+[LM Studio](https://lmstudio.ai/) is a tools that allows you to run models locally. You can download models directly from [[Ollama#Running Models from Hugging Face|Ollama]] through this interface. It is literally dead simple that I won't even write documentation about it. Just download a model, run an API server and be done with it. Typically I would use LM Studio to try out different models and once I made my decision, I would run it via [[Ollama]].
 [Run ANY Open-Source Model LOCALLY (LM Studio Tutorial) - YouTube](https://www.youtube.com/watch?v=yBI1nPep72Q)
 
 ## Comparison

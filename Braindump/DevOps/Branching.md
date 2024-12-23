@@ -24,3 +24,4 @@ A developer pulls and commits to the main branch multiple times per day. Either 
 | Small feedback loop due to frequent integration                     | Discipline of developers is needed to integrate often and keep main stable |
 | Merge conflicts are easier to solve as the code changes are smaller | Automated testing is required to guarantee quality of the main branch      |
 | Everyone is using the latest version of the codebase                | Mindset to immediately fix main in case of failing builds is required      |
+

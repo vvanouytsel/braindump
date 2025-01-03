@@ -3,9 +3,9 @@ tags:
   - devops
 ---
 
-## Branching strategies
+# Branching strategies
 
-### Feature based
+## Feature based
 
 A developer works isolated from the main branch until the feature is complete. Once development is done, the branch is merged into the main branch.
 
@@ -15,7 +15,7 @@ A developer works isolated from the main branch until the feature is complete. O
 | Multiple features can be developed at the same time | Integration only happens as soon as you merge to main |
 | Stable main branch                                  |                                                       |
 
-### Trunk based
+## Trunk based
 
 A developer pulls and commits to the main branch multiple times per day. Either no, or very short lived branches are used.
 

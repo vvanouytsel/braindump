@@ -18,11 +18,9 @@ Flow can be increased by the following steps:
 * Reduce the batch sizes
 * Reduce the amount of hand offs
 
-### Implementations
-
-#### Feature toggles
-
-By using feature toggles you can commit often and thus introduce smaller changes to the system. Once the feature is complete, the feature toggle can be enabled.
+**Examples**:
+* Feature toggles
+	* By using feature toggles you can commit often and thus introduce smaller changes to the system. Once the feature is complete, the feature toggle can be enabled.
 
 ## The Second Way: The principles of feedback
 
@@ -33,11 +31,9 @@ To shorten the feedback loop we should:
 * Swarm and solve problems to contain these before they can spread
 * Push quality closer to the source
 
-### Implementations
-
-#### Continuous Integration
-
-By introducing CI systems we can continually evaluate the quality of our created code. These systems should be designed to give us a short feedback loop. If these builds fail, the feedback should reach the responsible teams and effort should be taken to swarm the problem to reduce it from spreading further.
+**Examples**:
+* Continuous Integration
+	* By introducing CI systems we can continually evaluate the quality of our created code. These systems should be designed to give us a short feedback loop. If these builds fail, the feedback should reach the responsible teams and effort should be taken to swarm the problem to reduce it from spreading further.
 
 ## The Third Way: The principles of continual learning and experimentation
 
@@ -50,8 +46,14 @@ We can do this by:
 * Introduce controlled failures in systems to make them more resilient
 * Never stop learning
 
-### Implementations
+**Examples**:
+* Blameless postmortems
+	* Failures will always happen. Instead of fearing them, we should embrace them and learn from them. In the event of a failure, a blameless postmortem can be written. The goal of these is to spread knowledge and think about possible solutions to prevents these from happening in the future.
 
-#### Blameless postmortems
+# Breaking down barriers
 
-Failures will always happen. Instead of fearing them, we should embrace them and learn from them. In the event of a failure, a blameless postmortem can be written. The goal of these is to spread knowledge and think about possible solutions to prevents these from happening in the future.
+Another key principle of DevOps is to increase the collaboration between the different teams. When teams are working in isolated silo's they are often dependent on other teams. This means that a lot of the time work will simply be stuck in a queue which increases the lead time dramatically. One of the goals of DevOps is to break down these barriers which improves collaboration.
+
+## Conway's Law
+
+Conway's Law mentions that the architecture of your software reflects the communication and collaboration steams in your organization. If your teams work in silo's on their own isolated island, the software architecture will reflect that. This leads to all sorts of misalignments and causes frustration and inefficiency. Instead, [[Teams|teams]] should be build around the needs of the business.

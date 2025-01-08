@@ -1,3 +1,7 @@
+---
+tags:
+  - devops
+---
 
 In order to bring the [[Principles|theory]] to practice we will need to build implementations.
 

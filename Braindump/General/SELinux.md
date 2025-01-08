@@ -8,7 +8,7 @@ SELinux is **a set of kernel modifications and user-space tools that have been a
 
 A fantastic blogpost can be read [here](https://github.blog/developer-skills/programming-languages-and-frameworks/introduction-to-selinux/).
 
-## Working with SELinux
+# Working with SELinux
 
 List all the SELinux users.
 
@@ -47,7 +47,7 @@ comm=72733A6D61696E20513A526567 name="messages" dev="sda3" ino=255765 scontext=s
 
 Alternatively you can also use `ausearch` to list AVC denials.
 
-## A Practical Example
+# A Practical Example
 
 Via `ausearch` you get the following output.
 
@@ -111,7 +111,7 @@ semanage fcontext -a -t usr_t "/mnt/data/bamboo-agent-home(/.*)?"
 restorecon -R -v /mnt/data/bamboo-agent-home
 ```
 
-## Troubleshooting
+# Troubleshooting
 
 Show recent blocked actions by SELinux.
 
@@ -150,3 +150,15 @@ sealert -l "*
 ```
 
 References: [Troubleshooting Problems Related to SELinux :: Fedora Docs](https://docs.fedoraproject.org/en-US/quick-docs/selinux-troubleshooting/)
+
+#
+
+
+List local fcontext
+
+```bash
+$ semanage fcontext --list --locallist
+SELinux fcontext                                   type               Context
+
+/mnt/data/prometheus-2.55.1.linux-amd64(/.*)?      all files          system_u:object_r:mnt_t:s0 
+```

@@ -42,3 +42,9 @@ Unit tests are extremely quick and lightweight to run. You want a lot of these a
 Whenever you find out that an integration test fails, you should think critically and investigate if it is possible to have found the same defect using a unit test. If the answer is yes, write the unit test.
 
 More extensive tests such as performance or load tests can be run either continually or on a schedule. These should not be part of your [[Implementing the Three Flows#The Deployment Pipeline|pipeline]] by default, as they often take a long time to complete.
+
+## Continuous integration
+
+Long lived feature branches should be avoided. Instead developers should merge their changes at least once a day to the main branch. This allows the automated test suite to be triggered and provides feedback to the developer about the changes he did. By keeping this change set small, it becomes easier to troubleshoot and fix issues in case the tests fail.
+
+Before committing, developers should run unit tests locally. Alternatively this can be automated by using pull requests and merging pull requests daily. The necessary tests to attempt to keep the main branch in a deployable state, can be triggered as part of the pull request.

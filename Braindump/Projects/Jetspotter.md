@@ -59,7 +59,7 @@ I used [open-meteo](https://open-meteo.com/)to fetch weather data. Based on the 
 
 ## Metrics are cool
 
-As a DevOps Engineer, I often work with tools such as [Prometheus](https://prometheus.io/) and [Grafana](<https://grafana.trendminer.net/>. However, this is always from the point where the metrics are already available. I never attempted to create metrics myself. This looked like an interesting challenging so I decided to take it on.
+As a DevOps Engineer, I often work with tools such as [Prometheus](https://prometheus.io/) and [Grafana](https://grafana.trendminer.net/). However, this is always from the point where the metrics are already available. I never attempted to create metrics myself. This looked like an interesting challenging so I decided to take it on.
 
 There was an existing [library](https://prometheus.io/docs/guides/go-application/) to implement metrics in Go. The most difficult was to think about the metrics I wanted to keep. As the amount of metrics can quickly grow to millions if you are not careful.
 

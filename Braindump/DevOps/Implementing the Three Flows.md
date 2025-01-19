@@ -48,3 +48,18 @@ More extensive tests such as performance or load tests can be run either continu
 Long lived feature branches should be avoided. Instead developers should merge their changes at least once a day to the main branch. This allows the automated test suite to be triggered and provides feedback to the developer about the changes he did. By keeping this change set small, it becomes easier to troubleshoot and fix issues in case the tests fail.
 
 Before committing, developers should run unit tests locally. Alternatively this can be automated by using pull requests and merging pull requests daily. The necessary tests to attempt to keep the main branch in a deployable state, can be triggered as part of the pull request.
+
+## Splitting deployments from releases
+
+A deployment is when you install a new version of your software.
+A release is when you make software available to your customers.
+
+In traditional systems they often might mean the same thing. However we should strive to split deployments from releases.
+
+Feature toggles can be used to control which features are available to the customer. Enabling or disabling the feature for a (set of) customer(s) is as simple as 'flicking a switch'.
+
+By increasing the deployments we do to production, we can already test new functionality under 'real' load without making the feature available to the end user. This allows us to tweak and tackle issues for days/weeks before the decision is made to make the feature available to the public. This method is often called a 'dark launch'.
+
+Splitting deployment for releases also loosens the dependency between the business and development. As the feature is already deployed in production, the only action that needs to be taken is to enable the feature toggle to make it available for the customers.
+
+Doing this makes releases a lot less complex, as a release just means to enable a set of feature toggles to make the software available to the public.

@@ -90,4 +90,4 @@ Currently there is no front-end. I would love to learn more about front-end stuf
 This front-end would be used to:
 * show aircraft in the vicinity
 * show recently spotted aircraft
-* show [[Metrics|dashboards]] directly inside the application
+* show [dashboards](https://vvanouytsel.github.io/jetspotter/dashboards) directly inside the application

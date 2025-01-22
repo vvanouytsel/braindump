@@ -65,3 +65,13 @@ Decoupling deployments from releases also loosens the dependency between the bus
 Doing this makes releases a lot less complex, as a release just means enabling a set of feature toggles to make the software available to the public.
 
 ![[Pasted image 20250119110031.png]]
+
+## Change your architecture if necessary
+
+There is no perfect architecture. An architecture is used to reach certain goals. As the application grows, these goals can and will change. Whenever this happens, the architecture should change to reflect that.
+
+One technique that can be used to change architectures is the "[Strangler Fig Pattern"](https://martinfowler.com/bliki/StranglerFigApplication.html). Using this pattern you put all 'legacy' functionality behind an API and stop making any changes to it. New functionality is written using the new architecture. When required the new code can make calls to the legacy code through the API.
+
+Access to services should go through versioned APIs (versioned services/immutable services). This allows us to modify the service without having an impact on the callers. The system will become more decoupled if we handle it that way. When arguments of the API need to be modified, a new API version is created and all services that use it will be migrated over to the latest versions.
+
+Using this pattern, you can slowly convert your architecture step by step, just like a strangler fig takes over its host  tree.

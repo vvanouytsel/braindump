@@ -118,6 +118,9 @@ Read up on a specific topic.
 | Replace test with develop in whole file                                     | :s/test/develop/g                                                                          |
 | Replace 'initial' with 'replacement' in the 10 lines below the current line | :.,.+10s/initial/replacement/g                                                             |
 | Replace 'foo' with 'bar' between line 50 and 75                             | :50,75s/foo/bar/g                                                                          |
+| Move to previous location in jump list                                      | ctrl + o                                                                                   |
+| Move to next location in jump list                                          | ctrl + i                                                                                   |
+| Show jump list                                                              | :jumplist <br>`:h jump-motions` for more details                                           |
 
 ## Folding
 

@@ -134,7 +134,7 @@ Read up on a specific topic.
 
 ## Advanced
 
-| Description                    | Key                                                                               |
+| 	Description                   | Key                                                                               |
 | ------------------------------ | --------------------------------------------------------------------------------- |
 | Start recording                | q + character<br>q + a stored recording as a                                      |
 | Stop recording                 | q                                                                                 |
@@ -153,6 +153,7 @@ Read up on a specific topic.
 | Insert mode before current line           | O       |
 | Change word and switch to insert mode     | c + w   |
 | Change full line and sitch to insert mode | c + c   |
+|                                           |         |
 
 # Insert mode
 
@@ -193,3 +194,28 @@ Vim uses a set of registers. You can use these register using the `"` key.
 * [Vim Motions for absolute beginners](https://www.youtube.com/watch?v=lWTzqPfy1gE)
 * [Intermediate Vim Motions](https://www.youtube.com/watch?v=nBjEzQlJLHE)
 * [Cheatsheet](https://vim.rtorr.com/)
+* [Habits](https://www.moolenaar.net/habits.html)
+
+# The road to mastering vim
+
+I've attempted to start using vim bindings for a while now. The initial experience is extremely bad because I am 30 times slower with vim bindings than without. Much of that can be blamed on the fact that I just wanted to switch over completely in a big bang approach.
+
+This time, I'll try a different approach. Learn and master a small set of vim motions until I am proficient with them before attempting to learn more.
+
+## The first set of motions
+
+* Focus on moving the cursor via `jkhl`.
+* `^` and `$` to move to beginning and end of line.
+* Use `g` and `G` modifiers (`dG`,`vgg`).
+* Move back and forth between words and WORDS using `b`,`B`,`w,W`.
+* `a` and `A` to start inserting text.
+* Insert text at current position or beginning of line via `i` and `I`.
+
+## The second set of motions
+
+* `f`,`F`
+* `t`,`T`
+* `a(`
+* `a{`
+* Navigate to previous location of jump list with `Ctrl` + `i`.
+* Navigate to  next location of jump list with `Ctrl` + `o`.

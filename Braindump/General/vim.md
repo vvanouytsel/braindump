@@ -7,7 +7,7 @@ tags:
 So you want to be a hipster, I mean be efficient and learn vim keybindings?
 As with everything, the beginning will be hard, but all it takes is practice and muscle memory.
 
-## Getting help
+# Getting help
 
 You can't learn this by simply reading. Make sure to practice often and use the available manuals and tutorials, they are actually quite good.
 
@@ -27,9 +27,9 @@ Read up on a specific topic.
 :help $
 ```
 
-## Normal mode
+# Normal mode
 
-### Navigation
+## Navigation
 
 | **Description**                                           | **Key**                                                     |
 | --------------------------------------------------------- | ----------------------------------------------------------- |
@@ -59,6 +59,9 @@ Read up on a specific topic.
 | Move to start of page                                     | gg                                                          |
 | Move to end of page                                       | G                                                           |
 | Move to next curly braces, square brackets or parenthesis | %                                                           |
+| Move to the top of the screen                             | H                                                           |
+| Move to the middle of the screen                          | M                                                           |
+| Move to the bottom of the screen                          | L                                                           |
 
 > [!info]
 > Keys can be prefixed with an number. For example `20 k` moves you up 20 times.
@@ -77,7 +80,7 @@ Read up on a specific topic.
 > * `import_role`
 > * `:`
 
-### Manipulating text
+## Manipulating text
 
 | **Description**                       | **Key**                                                                                    |
 | ------------------------------------- | ------------------------------------------------------------------------------------------ |
@@ -113,7 +116,7 @@ Read up on a specific topic.
 | Replace character on current position | r + character<br>r + x replaces the current character with `x`                             |
 |                                       |                                                                                            |
 
-### Folding
+## Folding
 
 | Description                  | Key   |
 | ---------------------------- | ----- |
@@ -123,7 +126,7 @@ Read up on a specific topic.
 | Unfold individual code block | z + o |
 |                              |       |
 
-### Advanced
+## Advanced
 
 | Description                    | Key                                                                               |
 | ------------------------------ | --------------------------------------------------------------------------------- |
@@ -132,7 +135,7 @@ Read up on a specific topic.
 | Apply recording                | @ + character<br>@ + a applies recording a<br>15 + @ + a applies macro a 15 times |
 | Enable relative line numbering | :set relativenumber                                                               |
 
-### Switching modes
+## Switching modes
 
 | **Description**                           | **Key** |
 | ----------------------------------------- | ------- |
@@ -145,11 +148,11 @@ Read up on a specific topic.
 | Change word and switch to insert mode     | c + w   |
 | Change full line and sitch to insert mode | c + c   |
 
-## Insert mode
+# Insert mode
 
-## Visual mode
+# Visual mode
 
-## Command mode
+# Command mode
 
 | Description                                | Key                                                                                              |
 | ------------------------------------------ | ------------------------------------------------------------------------------------------------ |
@@ -164,7 +167,7 @@ Read up on a specific topic.
 | Run commands                               | :!command<br>`:!ls -ltr` runs the `ls -ltr` command<br>                                          |
 | Write to specific file                     | :w FILENAME<br>`:w /tmp/test.txt`                                                                |
 
-## Registers
+# Registers
 
 Vim uses a set of registers. You can use these register using the `"` key.
 
@@ -179,7 +182,8 @@ Vim uses a set of registers. You can use these register using the `"` key.
 | List all register       | :reg                                                                                                                                                |
 | Use a specific register | " + register + operation<br>`"+y`  yanks the current line to the `+` register, which is the clipboard<br>`"3p` pastes the text stored in register 3 |
 
-## References
+# References
 
-[Vim Motions for absolute beginners](https://www.youtube.com/watch?v=lWTzqPfy1gE)
-[Intermediate Vim Motions](https://www.youtube.com/watch?v=nBjEzQlJLHE)
+* [Vim Motions for absolute beginners](https://www.youtube.com/watch?v=lWTzqPfy1gE)
+* [Intermediate Vim Motions](https://www.youtube.com/watch?v=nBjEzQlJLHE)
+* [Cheatsheet](https://vim.rtorr.com/)

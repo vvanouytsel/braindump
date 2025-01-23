@@ -82,39 +82,42 @@ Read up on a specific topic.
 
 ## Manipulating text
 
-| **Description**                       | **Key**                                                                                    |
-| ------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Copy full line                        | yy                                                                                         |
-| Paste full line                       | p                                                                                          |
-| Undo                                  | u                                                                                          |
-| Undo all changes on a line            | U                                                                                          |
-| Redo                                  | ctrl + r                                                                                   |
-| Dele full line                        | dd                                                                                         |
-| Delete a word                         | d + i  + w                                                                                 |
-| Delete a WORD                         | d + i + W                                                                                  |
-| Delete paragraph                      | d + i + p                                                                                  |
-| Delete sentence                       | d + i + s                                                                                  |
-| Delete up to specific character       | d + t + character<br>`dt{` deletes up to next `{`                                          |
-| Change word                           | c + i + w                                                                                  |
-| Repeat previous operation             | .                                                                                          |
-| Search forward for character          | / + character<br>`/atlantis` moves to first iteration of the word atlantis from the cursor |
-| Iterate forward                       | n                                                                                          |
-| Iterate backward                      | N                                                                                          |
-| Search forward for word under cursor  | *                                                                                          |
-| Search backword for word under cursor | #                                                                                          |
-| Create markpoint                      | m + character<br>`ma` creates markpoint named `a`                                          |
-| Move to markpoint                     | \` + char<br>\`a moves to markpoint `a`                                                    |
-| Move to previous location             | \` + \`                                                                                    |
-| Move to last edited location          | \` + .                                                                                     |
-| Join next 3 lines together            | 3 + J                                                                                      |
-| Make word uppercase                   | g + U + w                                                                                  |
-| Make world lowercase                  | g + u + w                                                                                  |
-| Make line lowercase                   | g + u + u                                                                                  |
-| Make line uppercase                   | g + U + U                                                                                  |
-| Increment a number                    | ctrl + a                                                                                   |
-| Decrement a number                    | ctrl + x                                                                                   |
-| Replace character on current position | r + character<br>r + x replaces the current character with `x`                             |
-|                                       |                                                                                            |
+| **Description**                                                             | **Key**                                                                                    |
+| --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| Copy full line                                                              | yy                                                                                         |
+| Paste full line                                                             | p                                                                                          |
+| Undo                                                                        | u                                                                                          |
+| Undo all changes on a line                                                  | U                                                                                          |
+| Redo                                                                        | ctrl + r                                                                                   |
+| Dele full line                                                              | dd                                                                                         |
+| Delete a word                                                               | d + i  + w                                                                                 |
+| Delete a WORD                                                               | d + i + W                                                                                  |
+| Delete paragraph                                                            | d + i + p                                                                                  |
+| Delete sentence                                                             | d + i + s                                                                                  |
+| Delete up to specific character                                             | d + t + character<br>`dt{` deletes up to next `{`                                          |
+| Change word                                                                 | c + i + w                                                                                  |
+| Change whole line                                                           | C                                                                                          |
+| Repeat previous operation                                                   | .                                                                                          |
+| Search forward for character                                                | / + character<br>`/atlantis` moves to first iteration of the word atlantis from the cursor |
+| Iterate forward                                                             | n                                                                                          |
+| Iterate backward                                                            | N                                                                                          |
+| Search forward for word under cursor                                        | *                                                                                          |
+| Search backword for word under cursor                                       | #                                                                                          |
+| Create markpoint                                                            | m + character<br>`ma` creates markpoint named `a`                                          |
+| Move to markpoint                                                           | \` + char<br>\`a moves to markpoint `a`                                                    |
+| Move to previous location                                                   | \` + \`                                                                                    |
+| Move to last edited location                                                | \` + .                                                                                     |
+| Join next 3 lines together                                                  | 3 + J                                                                                      |
+| Make word uppercase                                                         | g + U + w                                                                                  |
+| Make world lowercase                                                        | g + u + w                                                                                  |
+| Make line lowercase                                                         | g + u + u                                                                                  |
+| Make line uppercase                                                         | g + U + U                                                                                  |
+| Increment a number                                                          | ctrl + a                                                                                   |
+| Decrement a number                                                          | ctrl + x                                                                                   |
+| Replace character on current position                                       | r + character<br>r + x replaces the current character with `x`                             |
+| Replace test with develop in whole file                                     | :s/test/develop/g                                                                          |
+| Replace 'initial' with 'replacement' in the 10 lines below the current line | :.,.+10s/initial/replacement/g                                                             |
+| Replace 'foo' with 'bar' between line 50 and 75                             | :50,75s/foo/bar/g                                                                          |
 
 ## Folding
 

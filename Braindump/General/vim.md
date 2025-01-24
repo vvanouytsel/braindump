@@ -210,6 +210,7 @@ This time, I'll try a different approach. Learn and master a small set of vim mo
 * Move back and forth between words and WORDS using `b`,`B`,`w,W`.
 * `a` and `A` to start inserting text.
 * Insert text at current position or beginning of line via `i` and `I`.
+* Using `G` to jump to specific locations (`16G` to move to line 16).
 
 ## The second set of motions
 

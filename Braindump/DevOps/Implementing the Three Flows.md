@@ -75,3 +75,28 @@ One technique that can be used to change architectures is the "[Strangler Fig Pa
 Access to services should go through versioned APIs (versioned services/immutable services). This allows us to modify the service without having an impact on the callers. The system will become more decoupled if we handle it that way. When arguments of the API need to be modified, a new API version is created and all services that use it will be migrated over to the latest versions.
 
 Using this pattern, you can slowly convert your architecture step by step, just like a strangler fig takes over its host  tree.
+
+# [[Principles#The Second Way The principles of feedback|The Second Way]]
+
+## Telemetry
+
+In order to verify that our application is running as expected, we have to monitor it. We can do so by collecting telemetry from all our systems that our application interacts with. A centralized telemetry system should be created where all our telemetry can be aggregated.
+
+## Logging
+
+Logging is an integral part of any application and is an important part of telemetry as we can convert log lines to metrics. To do so, we have to do this in a standardized way. Use the correct log levels.
+
+| Log level | Description                                                            | Example                                    |
+| --------- | ---------------------------------------------------------------------- | ------------------------------------------ |
+| DEBUG     | Application related, disabled in production and enabled for debugging. | Looping through customers.                 |
+| INFO      | User driven events.                                                    | User logging in, credit card transaction.  |
+| WARN      | Conditions that could potentially lead to errors.                      | Database call taking longer than expected. |
+| ERROR     | Error conditions.                                                      | API call fails.                            |
+| FATAL     | Program has to be terminated.                                          | Unable to bind to network socket.          |
+
+In order to make it easier to interpret these logs, we should create hierarchical categories. This can be done for both non-functional attributes and for attributes related to features.
+
+| Type           | Examples                 |
+| -------------- | ------------------------ |
+| Non-functional | security, performance    |
+| Features       | search, ranking, payment |

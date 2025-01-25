@@ -211,6 +211,7 @@ This time, I'll try a different approach. Learn and master a small set of vim mo
 * `a` and `A` to start inserting text.
 * Insert text at current position or beginning of line via `i` and `I`.
 * Using `G` to jump to specific locations (`16G` to move to line 16).
+* Utilize the `c` modifier to replace content.  (`ci"` replaces everything between quotes).
 
 ## The second set of motions
 
@@ -220,3 +221,11 @@ This time, I'll try a different approach. Learn and master a small set of vim mo
 * `a{`
 * Navigate to previous location of jump list with `Ctrl` + `i`.
 * Navigate to  next location of jump list with `Ctrl` + `o`.
+
+# Neovim
+
+[Neovim](https://neovim.io/) is an editor based on vim.
+
+## LazyVim
+
+Neovim is extremely customizable. So much that it might look very daunting in the beginning. Luckily there are tools like [LazyVim](http://www.lazyvim.org/) that can help you to get a decent set up out of the box.

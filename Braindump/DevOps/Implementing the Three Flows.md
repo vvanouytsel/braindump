@@ -100,3 +100,23 @@ In order to make it easier to interpret these logs, we should create hierarchica
 | -------------- | ------------------------ |
 | Non-functional | security, performance    |
 | Features       | search, ranking, payment |
+
+## Creation of telemetry as part of our daily work
+
+Creating new metrics should be made very simple. Both infrastructure and supporting libraries should be created that allows for developers to create new metrics with a single line of code and have them available in a central location. This has been made easier with the introduction of the **OpenTelemetry** standard, as there is a lot of tooling that supports this standard. By increasing the available metrics, we make it easier to troubleshoot if issues arise.
+
+## Accessible dashboards for everyone
+
+Everyone that is part of the value stream has a benefit in viewing these metrics. Access to these dashboards should be self-service. For production telemetry, these dashboards can be displayed in places where Development and Operations work. This allows everyone to see how our services are operating.
+
+## Different levels of metrics
+
+Metrics can be defined in different types, depending on what they are tracking. Generally we can split them in the following levels.
+
+| Levels              | Example                                                                                |
+| ------------------- | -------------------------------------------------------------------------------------- |
+| Business            | Number of sales transactions, user sign-ups, churn rate                                |
+| Application         | transaction times, user response times, application faults                             |
+| Infrastructure      | web server traffic, CPU load, disk usage, memory usage                                 |
+| Client software     | JavaScript on the client browser,  errors and crashes, user-measured transaction times |
+| Deployment pipeline | Build pipeline status, test suite status, environment promotions                       |

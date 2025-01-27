@@ -1,3 +1,8 @@
+---
+tags:
+  - containers
+---
+
 [Buildah](https://github.com/containers/buildah) is a tool to build OCI-compatible container images. It is build from the ground up to run without a daemon and does not need root permissions.
 
 It uses the [container-storage](https://github.com/containers/storage) and [containers-image](https://github.com/containers/image) projects under the hood. Images can be build from existing images, from scratch or by using Dockerfiles. The resulting images adhere to the OCI specification and thus can run in a Docker environment.

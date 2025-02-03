@@ -173,4 +173,54 @@ docker buildx build --builder=vvanouytsel-rootless --load -t vvanouytsel:test .
 
 ### Remote driver
 
-### Docker container build driver
+Clone the buildkit repository.
+
+```bash
+$ git clone https://github.com/moby/buildkit.git 
+```
+
+Create certificates.
+
+```bash
+$ sudo dnf install -y nss-tools 
+$ curl -JLO "https://dl.filippo.io/mkcert/latest?for=linux/amd64"
+$ chmod +x mkcert-v*-linux-amd64
+$ sudo cp mkcert-v*-linux-amd64 /usr/local/bin/mkcert
+$ examples/kubernetes/create-certs.sh 127.0.0.1  
+$ kubectl apply -f .certs/buildkit-daemon-certs.yaml -n vvanouytsel
+```
+
+Deploy the service and deployment.
+
+```bash
+$ kubectl apply -f examples/kubernetes/deployment+service.privileged.yaml -n vvanouytsel
+$ kubectl scale --replicas=10 deployment/buildkitd -n vvanouytsel
+```
+
+Create a builder that points to your builtkitd.
+
+```bash
+# Since this uses a service, this only works from within the cluster.
+$ kubectl port-forward service/buildkitd 1234 -n vvanouytsel
+$ docker buildx create \             
+  --name remote-vvanouytsel \
+  --driver remote \
+  --driver-opt cacert=${PWD}/.certs/client/ca.pem,cert=${PWD}/.certs/client/cert.pem,key=${PWD}/.certs/client/key.pem,servername=127.0.0.1 \
+  tcp://localhost:1234
+```
+
+Build a Dockerfile in your current directory by using the remote builder and store the image as a tarball in `x.tar`.
+
+```bash
+$ docker buildx build --builder=remote-vvanouytsel -o - -t example:test . > x.tar
+```
+
+You can also directly load the created image in your image store.
+
+```bash
+$ docker buildx build --builder=remote-vvanouytsel  --load -t example:vvanouytsel .
+
+$ docker image ls | grep example
+
+example                                                                               vvanouytsel       d78cd6e87bb6   2 months ago    101MB
+```

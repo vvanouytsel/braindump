@@ -120,3 +120,13 @@ Metrics can be defined in different types, depending on what they are tracking. 
 | Infrastructure      | web server traffic, CPU load, disk usage, memory usage                                 |
 | Client software     | JavaScript on the client browser,  errors and crashes, user-measured transaction times |
 | Deployment pipeline | Build pipeline status, test suite status, environment promotions                       |
+
+## Telemetry to make deployments safer
+
+When using correct telemetry that indicates how our services are performing, we can overlay each code deployment on these charts. This allows stakeholders to quickly see the impact of their change.
+
+In case of issues, the faulty service can either be rolled back by use of feature toggles, or the issue can be fixed forward. By overlaying code deployments on all dashboards, it becomes very transparent to see what impact a code deployment had on which service.
+
+## Developers share rotation duties with operations
+
+Instead of keeping operations isolated with on-call duties, developers should be included in the on-call rotations. By doing this, we prevent recurring issues to be prioritized below new features. A feature can only be considered 'done' if it behaves like it is supposed to in production.

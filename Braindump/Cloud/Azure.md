@@ -4,6 +4,12 @@ tags:
   - cloud
 ---
 
+# Roles
+
+In Azure there is a difference between `Assigend Roles` and `Azure Role Assignments`.
+The `Assigned Roles` are used to configure permissions on Azure AD/Entra resources.
+The `Azure Role Assignements` are used to configure permissions on subscriptions.
+
 ## Authentication
 
 ### Username and Password

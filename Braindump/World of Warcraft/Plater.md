@@ -26,4 +26,4 @@ Plater is an addon that adds nameplates in World of Warcraft.
 	* Disable Abbreviate names (W.O. Warcraft)
 * Import [Border Color Manager](https://wago.io/_aQRhsLRu) and set to white
 * Enable Quazii Interrupt CD Indicator
-	* Set 'Will be ready color' to yellow
+	* Set 'Default Border Color' to green

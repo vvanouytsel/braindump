@@ -256,3 +256,30 @@ $ kubectl sniff $POD -n $NAMSEPACE -o capture.pcap -p
 ```
 
 You can now open the `capture.pcap` file in wireshark to have a look at the dump.
+
+## Dealing with PodSecurity
+
+It might be possible that your pod is enforcing a [Pod Security Standard](https://kubernetes.io/docs/concepts/security/pod-security-standards/). In that case it might be that the above `sniff` command does not work if priviliged containers are blocked due to the PodSecurity profile.
+
+In that case you can check what PodSecurity profile is used by checking the label of the namespace.
+
+```bash
+$ kubectl get namespace example --show-labels
+NAME        STATUS   AGE    LABELS
+example     Active   668d  hello=world,security.kubernetes.io/audit=restricted,pod-security.kubernetes.io/enforce=baseline
+```
+
+In this example you can see that the `baseline` profile is used, which blocks priviliged containers.
+
+If you have the cluster permissions, you can temporary change this by enabling  a different profile. In this case the `priviliged` profile is used, which basically allows everything.
+
+```bash
+$ kubectl label namespace example pod-security.kubernetes.io/enforce=privileged --overwrite
+```
+
+Now you can run priviliged containers, and thus the `sniff` command from above.
+Make sure that you re-enable the previous profile whenever you are done!
+
+```bash
+$ kubectl label namespace example pod-security.kubernetes.io/enforce=baseline --overwrite
+```

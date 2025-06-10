@@ -3,8 +3,7 @@ tags:
   - containers
 ---
 
-t
-## Kubectl
+# Kubectl
 
 - Generate a Pod (remove dry-run if you want to apply it)
 
@@ -54,7 +53,7 @@ $ cat /sys/fs/cgroup/memory/memory.limit_in_bytes
 kubectl port-forward deployment-test 8080
 ```
 
-## Merge Multiple Kubeconfig Files
+# Merge Multiple Kubeconfig Files
 
 - Copy the target `kubeconfig` files to your machine
 - Install the `konfig` plugin for kubectl via `krew`
@@ -95,7 +94,7 @@ CURRENT   NAME                   CLUSTER                AUTHINFO                
 
 ```
 
-## Directly Query Kubelet Metrics
+# Directly Query Kubelet Metrics
 
 You can directly query the metrics of a kubelet using the following endpoints. This can come in handy if you for instance want to know the current imageFs used.
 
@@ -104,7 +103,7 @@ $ kubectl get --raw "/api/v1/nodes/my-test-turing31/proxy/stats/summary"
 $ kubectl get --raw "/api/v1/nodes/my-test-turing31/proxy/metrics/resource"
 ```
 
-## Use Custom Columns via Kubectl
+# Use Custom Columns via Kubectl
 
 ```bash
 $ kubectl get pods -A -o custom-columns=":metadata.name,:metadata.namespace,:spec.containers[0].image"
@@ -120,13 +119,13 @@ my-datasource-587974797c-vvt24                   trendminer      docker.trendmin
 coredns-5789895cd-2cnmf                          kube-system     rancher/mirrored-coredns-coredns:1.8.6
 ```
 
-## Delete All Pods in Failed State
+# Delete All Pods in Failed State
 
 ```bash
 $ kubectl delete pods -A --field-selector status.phase=Failed
 ```
 
-## Directly Communicate with Kubernetes API via Curl
+# Directly Communicate with Kubernetes API via Curl
 
 - You can directly send a request to the Kubernetes API server. You do however need to specify certificates.
     - `client-admin.crt`: this is the client certificate representing that you are doing this request as the 'admin' user
@@ -149,14 +148,14 @@ $ curl -v --cert /tmp/client-admin.crt --key /tmp/client-admin.key --cacert /tmp
 }%
 ```
 
-## Delete All Pods in All Namespaces
+# Delete All Pods in All Namespaces
 
 ```bash
 $ kubectl delete --all pods --all-namespaces
 
 ```
 
-## Generate YAML Manifests via CLI
+# Generate YAML Manifests via CLI
 
 You can generate any manifest file using the `kubectl create --dry-run=client` command. Use the `-h` argument if you are not sure what the options are.
 
@@ -177,7 +176,7 @@ rules:
   - list
 ```
 
-## Quickly search API
+# Quickly search API
 
 You can very easily and interactively search available fields in the API using `kubectl explain` and `kubectl explore`.
 
@@ -212,9 +211,9 @@ The `explore` plugin can be used to interactively search available fields. How
 ❯ kubectl explore deployment.spec
 ```
 
-## K9s
+# K9s
 
-### Plugins
+## Plugins
 
 You can use plugins to add custom functionality. Copy your plugins to `~/.config/k9s/plugin.yml`.
 
@@ -239,3 +238,21 @@ plugins:
 ```
 
 [Plugins](https://k9scli.io/topics/plugins/ "https://k9scli.io/topics/plugins/")
+
+# Using tcpdump in a Pod
+
+If you need to troubleshoot network connectivity in a pod, you can use the `sniff` kubectl plugin.
+
+Install the sniff plugin.
+
+```bash
+$ kubectl krew install sniff
+```
+
+Run sniff to capture a dump in `capture.pcap`.
+
+```bash
+$ kubectl sniff $POD -n $NAMSEPACE -o capture.pcap -p
+```
+
+You can now open the `capture.pcap` file in wireshark to have a look at the dump.

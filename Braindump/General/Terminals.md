@@ -3,7 +3,7 @@ tags:
   - linux
 ---
 
-## Tmux
+# Tmux
 
 Tmux is a tool such as `screen`. It allows you to set up a `tty` and de-attach, re-attach to it.
 
@@ -21,7 +21,7 @@ $ tmux list-sessions
 $ tmux attach [-t session_id]
 ```
 
-## Terminator
+# Terminator
 
 - Fix double characters in Ubuntu 22 on broadcast This seems to be related to `ibus`.
 
@@ -30,7 +30,7 @@ $ tmux attach [-t session_id]
 ibus restart
 ```
 
-## Kitty
+# Kitty
 
 [Kitty](https://sw.kovidgoyal.net/kitty/overview/ "https://sw.kovidgoyal.net/kitty/overview/") is a very cool terminal, a replacement for terminator that I used before.
 A cool font to use is [Victor Mono](https://fonts.google.com/specimen/Victor+Mono "https://fonts.google.com/specimen/Victor+Mono")
@@ -50,7 +50,7 @@ alias s="kitten ssh"
 
 [Reference](https://sw.kovidgoyal.net/kitty/faq/#i-get-errors-about-the-terminal-being-unknown-or-opening-the-terminal-failing-or-functional-keys-like-arrow-keys-don-t-work)
 
-### Custom configuration
+## Custom configuration
 
 Edit `~/.config/kitty/kitty.conf`
 
@@ -74,7 +74,7 @@ font_family VictorMono NFM Medium
 font_size 13
 ```
 
-### Keybindings
+## Keybindings
 
 | Description                         | Keybind                |
 | ----------------------------------- | ---------------------- |
@@ -86,13 +86,23 @@ font_size 13
 | Navigate to screen left/right       | Ctrl + Shift + <- / -> |
 | Navigate to tab left/right/up/down  | Ctrl + <- / -> / ↑ / ↓ |
 
-## Warp
+## Broadcasting
+
+You can open multiple tabs and use [broadcasting](https://sw.kovidgoyal.net/kitty/kittens/broadcast/) to send input simultaneously to all tabs.
+To do so, add the following to your configuration.
+
+```bash
+map f1 launch --allow-remote-control kitty +kitten broadcast
+```
+
+Restart your terminal and open multiple tabs. You can now broadcast commands by using the F1 key.
+
+# Warp
 
 Warp is a modern, Rust-based terminal with AI built in so you and your team can build great software, faster.
 
 [Warp: Your terminal, reimagined](https://www.warp.dev)
 
-## Zelij
+# Zelij
 
 [Zelij](https://zellij.dev/)is a terminal workspace with batteries included.
-

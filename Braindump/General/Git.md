@@ -41,7 +41,7 @@ Use a template for you commit messages.
 git config --global commit.template ~/.gitmessage 
 ```
 
-## Using Multiple Git Accounts and SSH Keys
+# Using Multiple Git Accounts and SSH Keys
 
 Assume you have a company specific GitHub account and a personal GitHub account.
 
@@ -66,3 +66,47 @@ git remote set-url origin git@gitaspersonal:vvanouytsel/myproject.git
 ```
 
 Happy pushing!
+
+# Changing a commit message of an older commit
+
+If for some reason you need to change a commit message of an older commit, you can do by rewriting your history. You should only do this on branches and never on your main branch.
+
+## Without merge commits
+
+If you do not use 'merge' commits but instead use rebase to merge changes from main into your branch, it is very easy to change any previous commit message.
+
+```sh
+$ git rebase -i HEAD~3
+
+  1 pick 9e16d8c fix: change me
+  2 pick f5ed786 fix: some message    
+  3 pick edd3248 fix: this is the latest commit
+```
+
+The above command starts an interactive rebase of the last 3 commits. The commit at the bottom is the latest commit.
+
+Using interactive rebasing, you can use a multitude of keywords for each commit. The ones I use the most are listed below.
+
+`p (pick)`: use the commit
+`r (reword)`: use the commit  but change the commit message
+`s (squash)`: use the commit but meld it into  the previous commit
+`f (fixup)`: like `squash` but keep only the previous commit's log message. Unless `-C` is used, in which case keep only this commit's message; `-c` is same as `-C` but opens the editor.
+
+Once done, you can force push your changes to your branch.
+
+## With merge commits
+
+When using merge commits, it becomes a little bit more complex.
+If that is the case you need to follow the steps below.
+
+* Find the commit SHA of the commit that occurred right before the commit you want to change.
+* Start an interactive rebase using `--rebase-merges` of the commit SHA right before the commit you want to change.
+
+```bash
+$ git rebase -i --rebase-merges aa3e0ef024d70b0a3470f75984bc9244caf26aa8
+```
+
+* Find the commit you want to change, use `fixup` and change `-c` to `-C`
+* Change the commit message in the opened editor
+* Solve any merge conflicts that might occur and continue with `git rebase --continue`, possibly resulting in more merge conflicts. Keep solving them and continuing.
+* Force push your changes to your branch

@@ -87,10 +87,12 @@ The above command starts an interactive rebase of the last 3 commits. The commit
 
 Using interactive rebasing, you can use a multitude of keywords for each commit. The ones I use the most are listed below.
 
-`p (pick)`: use the commit
-`r (reword)`: use the commit  but change the commit message
-`s (squash)`: use the commit but meld it into  the previous commit
-`f (fixup)`: like `squash` but keep only the previous commit's log message. Unless `-C` is used, in which case keep only this commit's message; `-c` is same as `-C` but opens the editor.
+| Identifier | Keyword | Description                                                                                                                                                                   |
+| ---------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| p          | pick    | use the commit                                                                                                                                                                |
+| r          | reword  | use the commit  but change the commit message                                                                                                                                 |
+| s          | squash  | use the commit but meld it into  the previous commit                                                                                                                          |
+| f          | fixup   | like `squash` but keep only the previous commit's log message. Unless `-C` is used, in which case keep only this commit's message; `-c` is same as `-C` but opens the editor. |
 
 Once done, you can force push your changes to your branch.
 

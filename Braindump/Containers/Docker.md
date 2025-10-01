@@ -95,3 +95,9 @@ The result is that the secret was available for building your container, but no 
 $ docker run -ti build-args:1.0.0 cat /root/my-secret.txt
 myverysecretpassword
 ```
+
+
+My default your secret is mounted to a file. You can also specify the `env` option to have it set as an environment during your build.
+```
+RUN --mount=type=secret,id=my-secret,env=MY_SECRET_ENV_VAR
+```

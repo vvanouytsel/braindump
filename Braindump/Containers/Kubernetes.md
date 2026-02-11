@@ -213,6 +213,88 @@ The `explore` plugin can be used to interactively search available fields. How
 
 # K9s
 
+## Skins
+
+You can find available skins [here](https://github.com/derailed/k9s/tree/master/skins). These have to be placed in `~/.config/k9s/skins/`.
+
+```bash
+❯ ls -l ~/.config/k9s/skins/            
+total 8
+-rw-r--r--. 1 vvanouytsel vvanouytsel 2519 Jan 24  2025 gruvbox.yaml
+-rw-r--r--. 1 vvanouytsel vvanouytsel 2870 Feb 11 10:08 nord.yaml
+```
+
+You can reference these skins in your config file via the `ui.skin` key.
+
+```bash
+❯ cat ~/.config/k9s/config.yaml
+k9s:
+  liveViewAutoRefresh: false
+  screenDumpDir: /home/vvanouytsel/.local/state/k9s/screen-dumps
+  refreshRate: 2
+  maxConnRetry: 5
+  readOnly: false
+  noExitOnCtrlC: false
+  ui:
+    skin: gruvbox
+    enableMouse: false
+    headless: false
+    logoless: false
+    crumbsless: false
+    reactive: false
+    noIcons: false
+    defaultsToFullScreen: false
+  skipLatestRevCheck: false
+  disablePodCounting: false
+  shellPod:
+    image: busybox:1.35.0
+    namespace: default
+    limits:
+      cpu: 100m
+      memory: 100Mi
+  imageScans:
+    enable: false
+    exclusions:
+      namespaces: []
+      labels: {}
+  logger:
+    tail: 100
+    buffer: 5000
+    sinceSeconds: -1
+    textWrap: false
+    showTime: false
+  thresholds:
+    cpu:
+      critical: 90
+      warn: 70
+    memory:
+      critical: 90
+      warn: 70
+```
+
+If you want to use different skins for different clusters (to help identify when you are running against production clusters), you can do that by overwrite the skin the config file of your specific cluster.
+
+With this setup all my clusters use `gruvbox` and my `aks-development` cluster uses the `nord` skin.
+
+```bash
+❯ cat ~/.local/share/k9s/clusters/aks-development/aks-development/config.yaml
+k9s:
+  cluster: aks-development
+  skin: nord
+  namespace:
+    active: all
+    lockFavorites: false
+    favorites:
+    - all
+  view:
+    active: pods
+  featureGates:
+    nodeShell: false
+  portForwardAddress: localhost
+```
+
+
+
 ## Plugins
 
 You can use plugins to add custom functionality. Copy your plugins to `~/.config/k9s/plugin.yml`.

@@ -303,20 +303,24 @@ You can use plugins to add custom functionality. Copy your plugins to `~/.confi
 
 ```yaml
 plugins:
-  #--- Create debug container for selected pod in current namespace
-  # See https://kubernetes.io/docs/tasks/debug/debug-application/debug-running-pod/#ephemeral-container
   debug:
     shortCut: Shift-D
-    description: Add debug container
-    dangerous: true
+    confirm: false
+    description: Debug
     scopes:
-      - containers
-    command: bash
+    - containers
+    command: kubectl
     background: false
-    confirm: true
     args:
-      - -c
-      - 'kubectl debug -it --context $CONTEXT -n=$NAMESPACE $POD --target=$NAME --image=nicolaka/netshoot:v0.12 --share-processes -- bash'
+    - debug
+    - -it
+    - -n
+    - $NAMESPACE
+    - $POD
+    - --target
+    - $NAME
+    - --image
+    - busybox:1.35.0
 ```
 
 [Plugins](https://k9scli.io/topics/plugins/ "https://k9scli.io/topics/plugins/")

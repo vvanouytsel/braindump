@@ -186,7 +186,12 @@ List dns CNAME records
 az network dns record-set cname list --zone-name company.com --resource-group rg-dns-development
 ```
 
-## Ask
+## AKS
+
+Deleting a node from a nodepool
+```bash
+az aks nodepool delete-machines  --name default --machine-names aks-default-12967253-vmss000000 --cluster-name aks-my-cluster  --resource-group rg-aks-my-cluster
+```
 
 Store credentials in local kubeconfig
 
@@ -253,9 +258,9 @@ ingress-nginx-ingress-controller        LoadBalancer   10.0.235.155   10.92.0.19
 ingress-nginx-ingress-default-backend   ClusterIP      10.0.179.91    <none>        80/TCP                       124m
 ```
 
-### Ask and ACR Integration
+### AKS and ACR Integration
 
-Integrate existing ACR with existing Ask
+Integrate existing ACR with existing AKS
 
 ```bash
 ACR_NAME=your-acr-name

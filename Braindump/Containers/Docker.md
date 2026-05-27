@@ -101,3 +101,148 @@ My default your secret is mounted to a file. You can also specify the `env` opti
 ```
 RUN --mount=type=secret,id=my-secret,env=MY_SECRET_ENV_VAR
 ```
+
+## Layers
+
+Assume that you have the following Dockerfile.
+
+```Dockerfile
+FROM ubuntu:24.04
+COPY myfile.txt /myfile.txt
+RUN apt-get update && apt-get install -y vim
+```
+
+
+If you build that, you will see that it contains 3 layers. One for each instruction in your Dockerfile.
+
+
+```bash
+
+❯ docker build -t layerdeepdive:1.0.0 .
+[+] Building 8.0s (8/8) FINISHED docker:default
+=> [internal] load build definition from Dockerfile 0.0s
+=> => transferring dockerfile: 188B 0.0s
+=> [internal] load metadata for docker.io/library/ubuntu:24.04 0.4s
+=> [internal] load .dockerignore 0.0s
+=> => transferring context: 2B 0.0s
+=> [internal] load build context 0.1s
+=> => transferring context: 117B 0.0s
+=> [1/3] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b 0.0s
+=> => resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b 0.0s
+=> [2/3] COPY myfile.txt /myfile.txt 0.1s
+=> [3/3] RUN apt-get update && apt-get install -y vim 6.5s
+=> exporting to image 0.7s
+=> => exporting layers 0.7s
+=> => writing image sha256:f1b85c010918489758a55fadea5c7ab7ad7017ed020709e0c044cbce232bdb24 0.0s
+=> => naming to docker.io/library/layerdeepdive:1.0.0 0.0s
+```
+
+Using the `history` command you can see the build history of an image. Entries with a size greater than 0 are actual layers. Entries with a size of 0B just set metadata, these are not real filesystem layers.
+
+
+```bash
+❯ docker image history layerdeepdive:1.0.0
+IMAGE CREATED CREATED BY SIZE COMMENT
+f1b85c010918 4 minutes ago RUN /bin/sh -c apt-get update && apt-get ins… 134MB buildkit.dockerfile.v0
+<missing> 4 minutes ago COPY myfile.txt /myfile.txt # buildkit 21B buildkit.dockerfile.v0
+<missing> 6 weeks ago /bin/sh -c #(nop) CMD ["/bin/bash"] 0B
+<missing> 6 weeks ago /bin/sh -c #(nop) ADD file:8ce1caf246e7c778b… 78.1MB
+<missing> 6 weeks ago /bin/sh -c #(nop) LABEL org.opencontainers.… 0B
+<missing> 6 weeks ago /bin/sh -c #(nop) ARG LAUNCHPAD_BUILD_ARCH 0B
+<missing> 6 weeks ago /bin/sh -c #(nop) ARG RELEASE 0B
+```
+
+  
+  
+
+You can inspect the layers via the inspect command.
+
+  
+
+```bash
+❯ docker inspect layerdeepdive:1.0.0
+[
+{
+"Id": "sha256:f1b85c010918489758a55fadea5c7ab7ad7017ed020709e0c044cbce232bdb24",
+"RepoTags": [
+"layerdeepdive:1.0.0"
+],
+"RepoDigests": [],
+"Comment": "buildkit.dockerfile.v0",
+"Created": "2026-05-27T09:41:38.795638023+02:00",
+"Config": {
+"Env": [
+"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+],
+"Cmd": [
+"/bin/bash"
+],
+"Labels": {
+"org.opencontainers.image.version": "24.04"
+}
+},
+"Architecture": "amd64",
+"Os": "linux",
+"Size": 211933402,
+"GraphDriver": {
+"Data": {
+"LowerDir": "/var/lib/docker/overlay2/yqrrowrqzljg0j10us9z8abgh/diff:/var/lib/docker/overlay2/3d6941ad32c16ce745bca4d5f88653d8b679d66ffdf260e628bde1c46f7b029c/diff",
+"MergedDir": "/var/lib/docker/overlay2/fk6yo7lvdklxrdi986fmkwjn5/merged",
+"UpperDir": "/var/lib/docker/overlay2/fk6yo7lvdklxrdi986fmkwjn5/diff",
+"WorkDir": "/var/lib/docker/overlay2/fk6yo7lvdklxrdi986fmkwjn5/work"
+},
+"Name": "overlay2"
+},
+"RootFS": {
+"Type": "layers",
+"Layers": [
+"sha256:538812a4b9bd45adaac2b5e5b967daa6999aa44eb110aa32ae7c69702b906475",
+"sha256:878fc66709422b296fa90b605f1809b0baf55f249f7cf4b2a6a71e5bebe82d0c",
+"sha256:4a82024f524bd6b020d7158edf6d19f0651bc2cf8549263c14258ddb72cc2d4d"
+]
+},
+"Metadata": {
+"LastTagTime": "2026-05-27T09:41:39.483377205+02:00"
+}
+}
+]
+```
+
+  
+To only show the layers:
+  
+
+```bash
+❯ docker inspect layerdeepdive:1.0.0 --format '{{json .RootFS.Layers}}' | jq
+[
+"sha256:538812a4b9bd45adaac2b5e5b967daa6999aa44eb110aa32ae7c69702b906475",
+"sha256:878fc66709422b296fa90b605f1809b0baf55f249f7cf4b2a6a71e5bebe82d0c",
+"sha256:4a82024f524bd6b020d7158edf6d19f0651bc2cf8549263c14258ddb72cc2d4d"
+]
+```
+
+Together with the `docker image history` command we ran earlier and the `Dockerfile` we have, we can see where these layers are coming from.  
+
+`sha256:538812a4b9bd45adaac2b5e5b967daa6999aa44eb110aa32ae7c69702b906475` comes from the `ADD` entry that was used to build the `ubuntu:24.04` base image that we are referencing. We can double check this by pulling the `ubuntu:24.04` imare ourselves and listing its layers. As you can see that layer is identical to the layer we have in our container image.
+  
+```bash
+<missing> 6 weeks ago /bin/sh -c #(nop) ADD file:8ce1caf246e7c778b… 78.1MB
+```
+
+
+```bash
+❯ docker pull ubuntu:24.04
+24.04: Pulling from library/ubuntu
+Digest: sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+Status: Downloaded newer image for ubuntu:24.04
+docker.io/library/ubuntu:24.04
+
+❯ docker inspect ubuntu:24.04 --format '{{json .RootFS.Layers}}' | jq
+[
+"sha256:538812a4b9bd45adaac2b5e5b967daa6999aa44eb110aa32ae7c69702b906475"
+]
+```
+
+`sha256:878fc66709422b296fa90b605f1809b0baf55f249f7cf4b2a6a71e5bebe82d0c` comes from the `COPY myfile.txt /myfile.txt` entry in our Dockerfile.
+
+`sha256:4a82024f524bd6b020d7158edf6d19f0651bc2cf8549263c14258ddb72cc2d4d` comes from the `RUN apt-get update && apt-get install -y vim` entry in our Dockerfile.

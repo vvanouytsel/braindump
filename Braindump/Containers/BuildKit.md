@@ -224,3 +224,21 @@ $ docker image ls | grep example
 
 example                                                                               vvanouytsel       d78cd6e87bb6   2 months ago    101MB
 ```
+
+# Varia
+
+## Provenance
+
+If you are building your container image with [provenance](https://docs.docker.com/build/metadata/attestations/slsa-provenance/) enabled, your container image will include extra metadata about the build process.
+
+This is really cool as you can find a lot of information, such as the commit, author, branch, which Dockerfile was used and much more.
+
+Here is an example of a `jetspotter` image that shows the link to the workflow run where it was build. Cool stuff!
+
+```bash
+$ docker buildx imagetools inspect ghcr.io/vvanouytsel/jetspotter:latest --format '{{json .Provenance}}' | grep -A 3 runDetails
+      "runDetails": {
+        "builder": {
+          "id": "https://github.com/vvanouytsel/jetspotter/actions/runs/26227743279"
+        },
+```

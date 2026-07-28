@@ -72,9 +72,25 @@ In the AfterTouch UI:
     
     > _Speaker reports an empty `<margeAccountUUID>`_
     
-4. Click the **QuickFix** button (labelled "Fix", "Pair account", or "Apply QuickFix" depending on the version) and confirm.
+1. Click the **QuickFix** button (labelled "Fix", "Pair account", or "Apply QuickFix" depending on the version) and confirm.
 
-I did have to go the the UI and figure out how to migrate the URLs from Bose to the AfterTouch that is now running on the speaker itself. I didn't document that, sorry!
+My margeAccount was actually empty, but I did not see any 'QuickFix'. Instead I had to click on the button shown in the following entry. It was on the Health tab.
+```
+# Something with Link or Sync.
+### INFO Speaker /sources should match service Sources.xml
+```
+
+Add your hostname to your /etc/hosts file. The migration does not let you point to localhost.
+
+```bash
+root@spotty:~# cat /etc/hosts
+127.0.0.1	localhost.localdomain		localhost
+127.0.0.1    spotty
+```
+
+Navigate to the '4.Migration' tab and change all the URLs so they point to 'https://spotty:8080/xxx'.
+
+Click on 'Apply Suggested Plan' at the bottom. Your speaker will now migrate.
 
 Then reboot again to let the pairing take effect:
 

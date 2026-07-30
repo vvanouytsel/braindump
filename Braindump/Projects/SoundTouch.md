@@ -74,10 +74,10 @@ In the AfterTouch UI:
     
 1. Click the **QuickFix** button (labelled "Fix", "Pair account", or "Apply QuickFix" depending on the version) and confirm.
 
-My margeAccount was actually empty, but I did not see any 'QuickFix'. Instead I had to click on the button shown in the following entry. It was on the Health tab.
+My margeAccount was actually empty, but I did not see any 'QuickFix'. Instead I had to click on the button shown (Complete pairing) in the following entry. It was on the Health tab.
 ```
-# Something with Link or Sync.
-### INFO Speaker /sources should match service Sources.xml
+### Speaker reports an empty <margeAccountUUID>
+Complete pairing
 ```
 
 Add your hostname to your /etc/hosts file. The migration does not let you point to localhost.
@@ -144,3 +144,5 @@ Okay, this was a shit show. It did not work at all and I always got the followin
 ```
 
 Trial and error and https://github.com/gesellix/Bose-SoundTouch/issues/521 helped me solved. I basically did a factory reset (1 + 'VOLUME DOWN' button), connect the speaker back to Wifi and attempt to do the migration again in the UI and for some reason it suddenly worked.
+
+**The important thing was that I needed to do the migration first, then do a factory reset and then fix the empty margeAccount by clicking on the 'pair' button in the Health tab.**
